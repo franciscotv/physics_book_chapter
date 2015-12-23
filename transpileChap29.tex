@@ -1,0 +1,229 @@
+\documentclass{report}
+\usepackage[utf8]{inputenc} 
+\usepackage{amsmath}
+\usepackage{amsthm}
+\usepackage{amssymb}
+
+
+\begin{document}
+
+\chapter{Chapter 29}
+
+\section{Alternating-Current Circuits}
+\subsection{Conceptual Problems}
+
+\paragraph{}
+1 - An ac generator rotates at 60 Hz and has a coil. Determine the time that elapses between successive peak emf values of the coil?\\
+Successive peaks are one-half period apart. Hence the elapsed time between the peaks is $\frac{1}{2}T = \frac{1}{2f} = \frac{1}{2(60^{-1})} = \fbox{8.33 ms} $.
+
+\paragraph{}
+2 - When the rms voltage in an ac circuit doubles, the peak voltage is:\\
+(a) doubled, (b) halved, (c) increased by a factor of $\sqrt{2}$, (d) not changed.\\
+A relationship between $V$ and $V_{peak}$ can be used to determine the effect of doubling the rms voltage on the peak voltage.\\
+First express the initial rms voltage in terms of the peak voltage:
+$$V_{rms} = \frac{V_{peak}}{\sqrt{2}}$$
+Then expres the doubled rms voltage in terms of the new peak voltage $V_{peak}^\prime$:
+$$2V_{rms} = \frac{V_{peak}^\prime}{\sqrt{2}}$$
+After you have done that you have to divide the second of these equations by the first and simplify to obtain:
+$$\frac{2V_{rms}}{V_{rms}} = \frac{\frac{V_{peak}^\prime}{\sqrt{2}}}{\frac{V_{peak}}{\sqrt{2}}} \Rightarrow 2 = \frac{V_{peak}^\prime}{V_{peak}}$$
+Now you only have to solve for $V_{peak}^\prime$:
+$$V_{peak}^\prime = 2 V_{peak} \Rightarrow \fbox{(a)} \text{ is the correct answer.}$$
+\paragraph{}
+3 - Suppose the frequency in the circuit shown in figure 29-27 is doubled, then the inductance in the inductor will (a) double, (b) not change, (c) halve, (d) quadruple.\\
+The inductance of an inductor is independent of the frequency of the circuit and is determined only by its construction. The reactance is dependent on the frequency, hence \fbox{(b)} is correct.
+
+\paragraph{}
+4 - Suppose the frequency in the circuit shown in figure 29-27 is doubled, then the inductive reactance of the inductor will (a) double, (b) not change, (c) halve, (d) quadruple.\\
+The inductive reactance of an inductor and the frequency are related by $X_L = \omega L$. Therefore, when $\omega$ is doubled, $X_L$ will double as well. \fbox{(a)} is correct.
+
+\paragraph{}
+5 - Suppose the frequency in the circuit shown in figure 29-28 is doubled, then the capacitiive reactance of the circuit will (a) double, (b) not change, (c) halve, (d) quadruple.\\
+The capacitive reactance of a capacitor varies with the frequency and are related by $X_C = \frac{1}{\omega C}$. Therefore, if $\omega$ change to its double then $X_C$ will halve. \fbox{(c)} is correct.
+
+\paragraph{}
+6 - (a) There is a circuit consisting of an ac generator and and ideal inductor, do exist time intervals when the inductor receives energy from the generator? When this happens? (b) Are there time intervals when the inductor supplies energy back to the generator? When this happens? Explain your answers.\\
+The answer to both questions is yes. (a) During current magnitude increase in the inductor, the inductor absorbs power from the generator. (b) During current decrease in the inductor, the inductor supplies power to the generator.
+
+\paragraph{}
+7 - (a) Imagine a circuit consisting of a generator and a capacitor, are there any time intervals when the capacitor receives energy from the generator? When this happens? (b) Does the capacitor supplies power to the generator? When this happens? Explain your answers.\\
+(a) The capacitor absorbs power from the generator while the magnitude of the charge is accumulating on either plate of the capacitor. (b) The capacitor supplies power to the generator whenever the magnitude of the charge on either plate of the capacitor is decreasing. 
+
+\paragraph{}
+8 - (a) Demonstrate that the SI unit of inductance multiplied by the SI unit of capacitance is equivalent to seconds squared. (b) Show that the SI unit of inductance divided by the SI unit of resistance is equivalent to seconds.\\
+(a) First substitute the SI units of inductance and capacitance then simplify to obtain:
+$$\frac{V \cdot s}{A} \cdot \frac{C}{V} = \frac{s}{\frac{C}{S}} \cdot C = \fbox{$s^2$}$$
+(b) First substitute the SI units of inductance divided by resistance then simplify:
+$$\frac{\frac{V \cdot s}{A}}{\Omega} = \frac{\frac{V \cdot s}{A}}{\frac{V}{A}} = \fbox{s}$$
+
+\paragraph{}
+9 - Imagine the rotation rate is increased in the ac circuit in figure 29-29. Then the rms current (a) increases, (b) does not change, (c) may increase or decrease depending on the magnitude of the original frequency, (d) may increase or decrease depending on the magnitude of the resistance, (e) decreases.\\
+The rms current through the resistor $I_{rms}$ is directly proportional to $\omega$ as shown here:
+$$I_{rms} = \frac{\mathcal{E}_{rms}}{R} = \frac{\mathcal{E}_{peak}}{\sqrt{2}} = \frac{NBA}{\sqrt{2}}\omega$$
+therefore, \fbox{(a)} is correct.
+
+\paragraph{}
+10 - Suppose the inductance is tripled in a circuit consisting solely of a variable inductor and a variable capacitor, how you have to change the capacitance so that the natural frequency of the circuit is unchanged? (a) triple the capacitance, (b) decrease the capacitance to one-third of its original value, (c) you should not change the capacitance, (d) you cannot determine how to change the capacitance from the data given.\\
+The natural frequency of an $LC$ circuit is given by
+$$f_0 = \frac{1}{2\pi\sqrt{LC}}$$
+We now express the natural frequencies of the circuit before and after the inductance is tripled:
+$$f_0 = \frac{1}{2\pi\sqrt{LC}} \text{ and } f_0^\prime = \frac{1}{2\pi\sqrt{L^\prime C^\prime}}$$
+We divide the second equation by the first and simplify:
+$$\frac{f_0^\prime}{f_0} = \frac{\frac{1}{2\pi\sqrt{L^\prime C^\prime}}}{\frac{1}{2\pi\sqrt{LC}}} = \sqrt{\frac{LC}{L^\prime C^\prime}}$$
+We take into account that the natural frequency is unchanged:
+$$1 = \sqrt{\frac{LC}{L^\prime C^\prime}} \Rightarrow \frac{LC}{L^\prime C^\prime} = 1 \Rightarrow C^\prime = \frac{L}{L^\prime}C$$
+Therefore when the inductance is tripled:
+$$C^\prime = \frac{L}{3L}C = \frac{1}{3}C$$
+Hence \fbox{(b)} is the correct answer.
+
+\paragraph{}
+11 - In a circuit consitig only of an ideal inductor and ideal capacitor, how does the maximum energy stored in the capacitor compare to the maximum value stored in the inductor? (a) They are the same and each equal to the total energy stored in the circuit. (b) They are the same and each equal to half of the total energy stored in the circuit. (c) The maximum energy stored in the capacitor is larger than the maximum energy stored in the inductor. (d) The maximum energy stored in the inductor is larger than the maximum energy stored in the capacitor. (e) You cannot compare the maximum energies based on the data given because the ratio of the maximum energies depends on the actual capacitance and inductance values.
+The maximum energy stored in the electric field ofthe capacitor is given by
+$$U_e = \frac{Q^2}{2C}$$
+and the maximum energy stored in the magnetic field of the inductor is given by
+$$U_m = \frac{LI^2}{2}.$$
+That is because energy is conserved in a LC circuit and oscillates between the inductor and the capacitor,
+$$U_c = U_m = U_{total},$$
+therefore answer \fbox{(a)} is correct.
+
+\paragraph{}
+12 - Check wheter the propositions are true or false.\\
+(a) A driven series $RlC$ circuit that has a high $Q$ factor has a narrow resonance curve.\\
+(b) A circuit consists of an inductor, a resistor and a capacitor, all connected in series. If the resistance of the resistor is doubled, the natural frequency of the circuit remains the same.\\
+(c) At resonance, the impedance of a driven series $RLC$ combination equals the resistance $R$.\\
+(d) At resonance, the current in a driven series $RLC$ circuit is in phase with the voltage applied tho the combination.\\
+\\
+(a) True. The $Q$ factor and the width of the resonance curve at half power are related according to
+$$Q = \frac{\omega_0}{\Delta \omega}$$
+this means that they are inversely proportional to each other.\\
+(b) True. Circuit's natural frequency depends only on the inductance $L$ of the inductor and the capacitance $C$ of the capacitor and is given by
+$$\omega = \frac{1}{\sqrt{LC}}.$$
+(c) True. The impedance of and $RLC$ circuit is given by
+$$Z = \sqrt{R^2 + (X_L - X_C)^2}.$$
+At resonance
+$$X_L = X_C \text{ and so } Z = R.$$
+(d) True. The phase angle $\delta$ is related to $X_L$ and $X_C$ according to
+$$\delta = \tan^{-1} \left( \frac{X_L - X_C}{R} \right)$$
+At resonance $X_L = X_C$ and so $\delta = 0.$
+
+\paragraph{}
+13 - Check wether propositions are true or false.\\
+(a) The power factor of a driven series RLC circuit is close to zero when near resonance.\\
+(b) A driven series $RLC$ circuit's power factor doesn't depend on the value of the resistance.\\
+(c) A driven series $RLC$ circuit's resonance frequency doesn't depend on the value of the resistance.\\
+(d) The peak current of a driven series $RLC$ circuit doesn't depend on the capacitance or the inductance when at resonance.\\
+(e) For frequencies below the resonant frequency, the capacitive reactance of a driven series $RLC$ circuit is larger than the inductive reactance.\\
+(f) For frequencies below the resonant frequency of a driven series $RLC$ circuit, the phase of the current leads ahead the phase of the applied voltage.\\
+\\
+(a) False. The power factor given by
+$$\cos \delta = \frac{R}{\sqrt{(X_L - X_C)^2 +R^2}},$$
+is close to 1.\\
+(b) False. The power factor is given by
+$$\cos \delta = \frac{R}{\sqrt{(X_L - X_C)^2 +R^2}}.$$
+(c) True. The resonance frequency for a driven series $RLC$ circuit depends only on $L$ and $C$ is given by
+$$\omega_{res} = \frac{1}{\sqrt{LC}}$$
+(d) True. At resonance $X_L - X_C = 0$ and so $Z = R$ and the peak current is given by $I_{peak} = V_{app,peak}/R.$\\
+(e) True. The capacitive reactance varies inversely with the driving frequency nd the inductive reactance varies directly with the driving frequency, hance at frequencies well below the resonance frequency the capacitive reactance is larger than the inductive reactance.\\
+(f) True. For frequencies below the resonant frequency, the circuit is more capacitive than inductive and the phase constant $phi$ is negative. This means that the current leads the applied voltage.\\
+
+\paragraph{}
+14 - How can two different radio stations be heard at the same specific frequency when a receiver is tuned it, this situation often occurs while driving between two cities?\\
+The power curves received by the radio have widht, hence the two frequencies coming from the radio stations can overlap as a result and you can receive signals from both stations.
+
+\paragraph{}
+15 - Check wether is true or false.\\
+(a) The power factor is close to zero at frequencies much higher than or much lower than the resonant frequency of a driven series $RLC$ circuit.\\
+(b) The larger the resonance width of a driven series $RLC$ circuit is, the larger the $Q$ factor for the circuit becomes.\\
+(c) The larger the resistance of a driven series $RLC$ circuit is, the larger the resonance width for the circuit is.\\
+\\
+(a) True. The power factor is given by
+$$\cos \delta = \frac{R}{\sqrt{\left( \omega L - \frac{1}{\omega C}\right)^2 + R^2}},$$
+therefore for values of $\omega$ that are much higher or much lower than the resonant frequency, the term in parentheses becomes very large and $\cos \delta$ approaches to zero.\\
+(b) False. When the resonance curve is reasonably narrow, the $Q$ factor can be approximated by
+$$Q = \omega_0 / \Delta \omega.$$
+Hence a large value for $Q$ corresponds to a narrow resonance curve.\\
+(c) True. See figure 29-21
+
+\paragraph{}
+16 - Suppose an ideal transformer has $N_1$ turns on its primary and $N_2$ turn on its secondary. The average power delivered to a load resistance $R$ connected across the secondary is $P_2$ whilst the primary rms voltage is $V_1$. The rms current in the primary windings can then be expressed as (a) $P_2 / V_1,$ (b) $(N_1 / N_2)(P_2 / V_1),$ (c) $(N_2 / N_1)(P_2 / V_1),$ (d) $(N_2 / N_1)2(P_2 / V_1).$\\
+Subscript 1 and 2 correspond to primary and secondary respectively. We assume no loss of power in the transformer, we can equate the power in the primary circuit to the power in the secondary circuit and solve for the rms current in th primary windings.\\
+Assuming no power loss in the transformer:
+$$P_1 = P_2$$
+Substituting for $P$ we obtain:
+$$I_{1,rms}V_{1,rms} = I_{2,rms}V_{2,rms}$$
+We solve for $I$ and simplify:
+$$I_{1,rms} = \frac{I_{2,rms}V_{2,rms}}{V_{1,rms}} = \frac{P_2}{V_{1,rms}}$$
+hence answer $\fbox{(a)}$ is correct.
+
+\paragraph{}
+17 - Check wether propositions aret true or false:
+(a) Transformers are used to change frequency.\\
+(b) Transformers are used to change voltage.\\
+(c) If a transformer steps up the current, it must step down the voltage.\\
+(d) A step-up transformer, steps down the current.\\
+(e) The standard household wall-outlet voltage in Europe is 220 V, about twice that used in the United States. If a European traveler wants her hair dryer to work properly in the United States, she should use a transformer that has more windings in its secondary coil than in its primary coil.\\
+(f) The standard household wall-outlet voltage in Europe is 220 V, about twice that used in the United States. If an American traveler wants his electric razor to work properly in Europe, he should use a transformer that steps up the current.\\
+\\
+(a) False. A transformer is a device used to raise or lower the voltage in a circuit.\\
+(b) True. A transformer is a device used to raise or lower the voltage in a circuit.\\
+(c) True. If energy is to be conserved, the product of the current and voltage must be constant.\\
+(d) True. Because the product of current and voltage in the primary and secondary circuits is the same, increasing the current in the secondary results in a lowering (or stepping down) of the voltage.\\
+(e) True. Because electrical energy is provided at a higher voltage in Europe, the visitor would want to step-up the voltage in order to make her hair dryer work properly.\\
+(f) True. Because electrical energy is provided at a higher voltage in Europe, the visitor would want to step-up the current (and decrease the voltage) in order to make his razor work properly. 
+
+\subsection{Estimation and Approximation}
+\paragraph{}
+18 - Resistance and inductive reactance are included in the impedances of motors, electromagnets and transformers. Suppose that phase of the current to a large industrial plant lags the phase of the applied voltage by $25^{\circ}$ when the plant on full operation using 2.3 MW of power.  The power is supplied to the plant from a substation 4.5 km from the plant; the 60 Hz rms line voltage at the plant is 40 kV. The resistance of the transmission line from the substation to the
+plant is 5.2 $\Omega$. The cost per kilowatt-hour to the company that owns the plant is \$0.14, and the plant pays only for the actual energy used. (a) Estimate the resistance and inductive reactance of the plant’s total load. (b) Estimate the rms current in the power lines and the rms voltage at the substation. (c) How much power is lost in transmission? (d) Suppose that the phase that the current lags the phase of the applied voltage is reduced to 18º by adding a bank of capacitors in series with the load. How much money would be saved by the electric utility during one month of operation, assuming the plant operates at full capacity for 16 h each day? (e) What must be the capacitance of this bank of capacitors to achieve this change in phase angle?\\
+We can find the resistance and inductive reactance of the plant’s total load from the impedance of the load and the phase constant. The current in the power lines can be found from the total impedance of the load the potential difference across it and the rms voltage at the substation by applying Kirchhoff’s loop rule to the substation-transmission wires-load circuit. The power lost in transmission can be found from $P_{trans} = I_{rms}^2 R_{trans}$. We can find the cost savings by finding the difference in the power lost in transmission when the phase angle is reduced to $18^{\circ}$. Finally, we can find the capacitance that is required to reduce the phase angle to $18^{\circ}$ by first finding the capacitive reactance using the definition of $\tan \delta$ and then applying the definition of capacitive reactance to find C.\\
+\\
+(a) First we relate the resistance and inductive reactance of the plant's total load to Z and $\delta$:
+$$R = Z \cos \delta \text{ and } X_L = Z \sin \delta$$
+We then express Z in terms of the rms current $I_{rms}$ in the power lines and the rms voltage $\mathcal{E}_{rms}$ at the plant:
+$$Z = \frac{\mathcal{E}_{rms}}{I_{rms}}$$
+after express teh power delivered to the plant in terms of $\mathcal{E}_{rms}, I_{rms} \text{ and } \delta$ and solve for $I_{rms}:$
+$$P_{av} = \mathcal{E}_{rms}I_{rms}\cos \delta \text{ and } I_{rms} = \frac{P_{av}}{\mathcal{E}_{rms}\cos \delta}$$
+then substitute to obtain:
+$$Z = \frac{\mathcal{E}_{rms}^2 \cos\delta}{P_{av}}$$
+Afterwards substitute numerical values and evaluate Z:
+$$Z = \frac{(40 kV)^2 \cos 25^{\circ}}{2.3MW} = 630 \Omega$$
+Substitute numerical values and evaluate for R and $X_L:$
+$$R = (630 \Omega)\cos 25^{\circ} = 571\Omega = \fbox{$0.57k\Omega$} \text{ and } X_L = (630\Omega)\sin 25^{\circ} = 266\Omega = \fbox{$0.27k\Omega$}$$
+\\
+(b) Find the current in the power lines:
+$$I_{rms} = \frac{2.3MW}{(40kV)\cos 25^{\circ}} = 63.4 A = \fbox{63A}$$
+Then apply Kirchhoff's loop rule to the circuit:
+$$\mathcal{E}_{sub} - I_{rms}R_{trans} - I_{rms}Z_{tot} = 0$$
+Solve for $\mathcal{E}_{sub}:$
+$$\mathcal{E}_{sub} = I_{rms}(R_{trans} + Z_{tot})$$
+Substitute numerical values and evaluate $\mathcal{E}_{sub}:$
+$$\mathcal{E}_{sub} = (63.4A)(5.2\Omega + 630\Omega) = \fbox{40.3kV}$$
+(c) The power lost in transmission is:
+$$P_{trans} = I_{trans}^2 R_{trans} = (63.4A)^2(5.2\Omega) = 20.9kW = \fbox{21kW}$$
+(d) Express the cost savings $\Delta C$ in terms of the difference in energy consumption $P_{25^{\circ}} - P_{18^{\circ}}\Delta t$ and the per-unit cost $u$ of the energy:
+$$\Delta C = (P_{25^{\circ}} - P_{18^{\circ}})\Delta tu$$
+Express the power lost in transmission when $\delta = 18^{\circ}:$
+$$P_{18^{\circ}} = I_{18^{\circ}}^2R_{trans}$$
+Then find the current in the transmission lines when $\delta = 18^{\circ}:$
+$$I_{18^{\circ}} = \frac{2.3MW}{(40kV)\cos 18^{\circ}} = 60.5A$$
+Evaluate $P_{18^{\circ}}:$
+$$P_{18^{\circ}} = (60.5A)^2(5.2\Omega) = 19 kW$$
+Substitute numerical values and evaluate $\Delta C:$
+$$\Delta C = (20.9kW - 19kW)(16 h/d)\left( 30 \frac{d}{\text{month}}\right) \left( \frac{\$0.14}{kW \cdot h}\right) = \fbox{\$128}$$
+(e) The required capacitance is given by:
+$$C = \frac{1}{2\pi fX_C}$$
+We then relate the new phase $\delta$ to the inductive reactance $X_L,$ the reactance due to the added capacitance $X_C,$ and the resistance of the load R:
+$$\tan \delta = \frac{X_L - X_C}{R} \Rightarrow X_C = X_L - R \tan \delta$$
+We substitute for $X_C:$
+$$C = \frac{1}{2\pi f(X_L R \tan \delta)}$$
+We then substitute numerical values and evaluate C:
+$$C = \frac{1}{2\pi(60s^{-1})(266\Omega - (571\Omega)\tan 18^{\circ})} = \fbox{$33\mu F$}$$
+
+
+
+
+
+
+
+
+
+\end{document}
