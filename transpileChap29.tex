@@ -218,7 +218,127 @@ $$C = \frac{1}{2\pi f(X_L R \tan \delta)}$$
 We then substitute numerical values and evaluate C:
 $$C = \frac{1}{2\pi(60s^{-1})(266\Omega - (571\Omega)\tan 18^{\circ})} = \fbox{$33\mu F$}$$
 
+\section{Alternating Current in Resistors, Inductors, and Capacitors}
+\paragraph{}
+19 - Suppose we have a 100-W light bulb in a standard 120-V-rms socket. Find (a) the rms current, (b) the peak current, and (c) the peak power.\\
+\\
+We use $P_{av} = \mathcal{E}_{rms}I_{rms}$ to find $I_{rms},$ $I_{peak} = \sqrt{2}I_{rms}$ to find $I_{peak},$ and $P_{peak} = I_{peak} \mathcal{E}_{peak}$ to find $P_{peak}.$\\
+(a) We find the relationship of average power delivered by the source to the rms
+voltage across the bulb and the rms current through it:
+$$P_{av} = \mathcal{E}_{rms}I_{rms} \Rightarrow I_{rms} = \frac{P_{av}}{\mathcal{E}_{rms}}$$
+We then substitute numerical values and evaluate $I_{rms}:$
+$$I_{rms} = \frac{100W}{120V} = 0.8333A = \fbox{0.833A}$$
+(b) We do express $I_{peak}$ in terms of $I_{rms}:$
+$$I_{peak} = \sqrt{2}I_{rms}$$
+substitute for $I_{rms}$ and evaluate $I_{peak}:$
+$$I_{peak} = \sqrt{2}(0.8333A) = 1.1785A = \fbox{1.18A}$$
+(c) Afterwards we need to express the maximum power in terms of the maximum voltage and maximum current, and substitute numerical values evaluating $P_{peak}:$
+$$P_{peak} = I_{peak} \mathcal{E}_{peak}$$
+$$P_{peak} = (1.1785A)\sqrt{2}(120V) = \fbox{200W}$$
 
+\paragraph{}
+20 - Suppose we have a circuit breaker for a current of 15 A rms at a voltage of 120 V rms. (a) What is the largest peak current that the breaker can carry? (b) What is the maximum average power that can be supplied by this circuit?\\
+\\
+We can use $I_{peak} = \sqrt{2}I_{rms}$ to find the largest peak current that the breaker can carry and $P_{av} = I_{rms}V_{rms}$ to find the average power supplied by the circuit.\\
+(a) We do express $I_{peak}$ in terms of $I_{rms}$ and relate the average power to the rms current and voltage:
+$$I_{peak} = \sqrt{2}I_{rms} = \sqrt{2}(15A) = \fbox{21A}$$
+$$P_{av} = I_{rms}V_{rms} = (15A)(120V) = \fbox{1.8kW}$$
+
+\paragraph{}
+21 - What is the reactance of a 1.00mH inductor at (a) 60 Hz, (b) 600 Hz, and (c) 6.00 kHz?\\
+\\
+Utilize $X_L = \omega L$ to determine the reactance of the inductor at any frequency. We do so by expressing the inductive reactance as a function of $f:$
+$$X_L = \omega L = 2\pi fL$$
+(a) At $f = 60Hz:$
+$$X_L = 2\pi (60s^{-1})(1mH) = \fbox{$0.38\Omega$}$$
+(b) At $f = 600Hz:$
+$$X_L = 2\pi (600s^{-1})(1mH) = \fbox{$3.77\Omega$}$$
+(c) At $f = 6kHz:$
+$$X_L = 2\pi (6ks^{-1})(1mH) = \fbox{$37.7\Omega$}$$
+
+\paragraph{}
+22 - An inductor has a reactance of 100 $\Omega$ at 80 Hz. (a) What is its inductance? (b) What is its reactance at 160 Hz?\\
+\\
+We can use $X_L = \omega L$ to find the inductance of the inductor at any frequency.\\
+(a) We do relate the reactance or the inductor the its inductance and solve for $L$ doing its evaluation:
+$$X_L = \omega L = 2\pi fL \Rightarrow L = \frac{X_L}{2\pi f}$$
+$$L = \frac{100 \Omega}{2\pi (80s^{-1})} = 0.199H = \fbox{0.20 H}$$
+(b) At 160 Hz:
+$$X_L = 2\pi (160s^{-1})(0.199H) = \fbox{$0.20k\Omega$}$$
+
+\paragraph{}
+23 - Consider a $10\mu F$ capacitor, at what frequency would its reactance equal a reactance of an 10mH inductor?\\
+\\
+If we equate reactances of the capacitor and inductor we then can solve for the frequency.\\
+We do express the reactance of the inductor, then we express the reactance of the capacitor equating these reactances:
+$$X_L = \omega L = 2\pi fL$$
+$$X_C = \frac{1}{\omega C} = \frac{1}{2\pi fC}$$
+$$2\pi fL = \frac{1}{2\pi fC} \Rightarrow f = \frac{1}{2\pi} \sqrt{\frac{1}{LC}}$$
+We finally substitute numerical values and evaluate f:
+$$f = \frac{1}{2\pi}\sqrt{\frac{1}{(10\mu F)(1mH)}} = \fbox{1.6kHz}$$
+
+\paragraph{}
+24 - What is the reactance of a 1.00nF capacitor at (a) 60.0 Hz, (b) 6.00 kHz, and (c) 6.00 MHz?\\
+\\
+We can use $X_C = 1 / \omega C$ to find the reactance of the capacitor at any frequency. By expressing the capacitive reactance as a function of $f:$
+$$X_C = \frac{1}{\omega C} = \frac{1}{2\pi fC}$$
+(a) At $f = 60 Hz$:
+$$X_C = \frac{1}{2\pi(60s^{-1})(1nF)} = \fbox{$2.65M\Omega$}$$
+(b) At $f = 6.00 kHz$:
+$$X_C = \frac{1}{2\pi(6.00kHz)(1nF)} = \fbox{$26.5k\Omega$}$$
+(c) At $f = 6.00 MHz$:
+$$X_C = \frac{1}{2\pi(6.00MHz)(1nF)} = \fbox{$26.5\Omega$}$$
+
+\paragraph{}
+ 25 - A 20-Hz ac generator that produces a peak emf of 10 V is connected to a $20-\mu F$ capacitor. Find (a) the peak current and (b) the rms current.\\
+\\
+We can use $I_{peak} = \mathcal{E}_{peak} / X_C$ and $X_C = 1 / \omega C$ to express $I_{peak}$ as a function of $\mathcal{E}_{peak}, f$ and C. Once we evaluate $I_{peak},$ we can use $I_{rms} = I_{peak} / \sqrt{2}$ to find $I_{rms}$.\\
+We begin by expressing $I_{peak}$ in terms of $\mathcal{E}_{peak}$ and $X_C$$$I_{peak} = \frac{\mathcal{E}_{peak}}{X_C}$$
+We then express the capacitive reactance and subsitute for $X_C$ and simplify:
+$$I_{peak} = 2\pi fC\mathcal{E}_{peak}$$
+(a) Substitute numerical values and evaluate $I_{peak}:$
+$$I_{peak} = 2\pi(20s^{}-1)(20\mu F)(10V) = 25.1mA = \fbox{25mA}$$
+(b) Express $I_{rms} = \frac{I_{peak}}{\sqrt{2}} = \frac{25.1mA}{\sqrt{2}} = 18mA$
+
+\paragraph{}
+26 - At what frequency is the reactance of a 10-$\mu F$ capacitor (a) 1.00 $\Omega$, (b) 100 $\Omega$, and (c) 10.0 $m\Omega$?\\
+\\
+We can use $X_C = 1 / \omega C = 1 / 2\pi fC$ to relate the reactance of the capacitor to the frequency:
+$$X_C = \frac{1}{\omega C} = \frac{1}{2\pi fC} \Rightarrow f = \frac{1}{2\pi CX_C}$$
+(a) Find $f$ when $X_C = 1.00 \Omega$:
+$$f = \frac{1}{2\pi(10\mu F)(1.00\Omega)} = \fbox{16kHz}$$
+(b) Find $f$ when $X_C = 100 \Omega$:
+$$f = \frac{1}{2\pi(10\mu F)(100\Omega)} = \fbox{0.16kHz}$$
+(c) Find $f$ when $X_C = 10.0m \Omega$:
+$$f = \frac{1}{2\pi(10\mu F)(10.0m \Omega)} = \fbox{1.6MHz}$$
+
+\paragraph{}
+27 - Suppose a circuit consists of two ideal ac generators and a 25-$\Omega$ resistor, all connected in series. The potential difference across the terminals of one of the generators is given by $V_1 = (5.0 V) \cos( \omega t – \alpha)$, and the potential difference across the terminals of the other generator is given by $V_2 = (5.0 V) \cos( \omega t + \alpha )$, where $\alpha = \pi / 6$. (a) Use Kirchhoff’s loop rule and a trigonometric identity to find the peak current in the circuit. (b) Use a phasor diagram to find the peak current in the circuit. (c) Find the current in the resistor if $\alpha = \pi / 4$ and the amplitude of $V_2$ is increased from 5.0 V to 7.0 V.\\
+\\
+We can find the sum of the phasors $V_1$ and $V_2$ using this trigonometric identity
+$$\cos \theta + \cos \phi = 2 \cos \frac{1}{2}(\theta + \phi) \cos \frac{1}{2}(\theta - \phi)$$
+then we use this sum to express $I$ as a function of time. In (b) we use a phasor diagram to obtain the same result and in (c) we use the phasor diagram appropriate to the given voltages to express the current as a function of time.\\
+(a) Apply the Kirchhoff's loop rule to the circuit and solve for I:
+$$V_1 + V_2 - IR = 0$$
+$$I = \frac{V_1 + V_2}{R}$$
+Then we use the trigonometric identity described above to find $V_1 + V_2:$
+$$V_1 + V_2 = (5.0V)[\cos (\omega t - \alpha ) + \cos (\omega t + \alpha)] = (5V)[2\cos \frac{1}{2}(2\omega t)\cos \frac{1}{2} (-2\alpha)] =$$
+$$(10V)\cos \frac{\pi}{6}\cos \omega t = (8.66V)\cos \omega t$$
+We substitute for $V_1 + V_2$ and $R$ to obtain:
+$$I = \frac{(8.66V)\cos \omega t}{25\Omega} = (0.346A)\cos \omega t = (0.35A)\cos \omega t$$
+$$I_{peak} = \fbox{0.35A}$$
+(b) We express the magnitude of the current in $R:$
+$$\lvert I \rvert = \frac{\lvert \vec{V} \rvert}{R}$$
+The phasor diagram for the voltages is shown. We can find $\vec V$ using vector addition:
+$$\lvert \vec V \rvert = 2 \lvert \vec V_1 \rvert cos 30^{\circ} = 2(5.0V)\cos 30^{\circ} = 8.66V$$
+We then substitute for $\lvert \vec V \rvert$ and $R$ to obtain: $\lvert I \rvert = \frac{8.66V}{25\Omega} = 0.346A$ and $I = (0.35A) \cos \omega t$ where $I_{peak} = \fbox{0.35A}$
+(c) The phasor diagram is shown. Note that the phase angle between $V_1$ and $V_2$ is now $90^{\circ}$. We use the Pythagorean theorem to find $\lvert \vec V \rvert$:
+$$\lvert \vec V \rvert = \sqrt{\lvert \vec V_1 \rvert ^2 + \lvert \vec V_2 \rvert ^2} = \sqrt{(5.0V)^2 + (7.0V)^2} = 8.60V$$
+Then we express $I$ as a function of $t$:
+$$I = \frac{\lvert \vec V \rvert}{R}\cos (\omega t + \delta)$$
+where $\delta = 45^{\circ} - (90^{\circ} - \alpha) = \alpha - 45^{\circ} = \tan ^{-1} \frac{7.0V}{5.0V} - 45^{\circ} = 9.462^{\circ} = 0.165rad$\\
+Finally substitute numerical values and evaluate $I$:
+$$I = \frac{8.60V}{25\Omega}\cos (\omega t + 0.165rad) = \fbox{$(0.34A)\cos (\omega t + 0.17rad)$}$$
 
 
 
