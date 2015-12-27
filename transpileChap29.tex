@@ -340,6 +340,186 @@ where $\delta = 45^{\circ} - (90^{\circ} - \alpha) = \alpha - 45^{\circ} = \tan 
 Finally substitute numerical values and evaluate $I$:
 $$I = \frac{8.60V}{25\Omega}\cos (\omega t + 0.165rad) = \fbox{$(0.34A)\cos (\omega t + 0.17rad)$}$$
 
+\section{Undriven Circuits Containing Capacitors, Resistors and Inductors}
+\paragraph{}
+28 - (a) Show that 1 LC has units of inverse seconds by substituting SI
+units for inductance and capacitance into the expression. (b) Show that $\omega$ 0 L/R (the expression for the Q-factor) is dimensionless by substituting SI units for angular frequency, inductance, and resistance into the expression.
+\\
+We begin by substituting the units of the various physical quantities in $1 / \sqrt{LC}$ and $Q = \omega{_0}L / R$ to establish their units.\\
+(a) We do substitute the units for $\omega{_0}, L$ and $C$ in the expression $1 / \sqrt{LC}$ and then simplify:
+$$\frac{1}{\sqrt{H\cdot F}} = \frac{1}{\sqrt{(\Omega \cdot s)(\frac{s}{\Omega})}} = \frac{1}{\sqrt{s^2}} = \fbox{$s^{-1}$}$$ 
+(b) We do substitute the units for $\omega{_0}, L$ and $R$ in the expression $Q = \omega{_0}L / R$ and simplify:
+$$\frac{\frac{1}{s} \cdot \frac{V \cdot s}{A}}{\frac{V}{A}} = 1 \Rightarrow \fbox{unitless}$$
+
+\paragraph{}
+29 - (a) What is the period of oscillation of an LC circuit consisting of an ideal 2.0-mH inductor and a 20- $\mu$ F capacitor? (b) A circuit that oscillates consists solely of an 80- $\mu$ F capacitor and a variable ideal inductor. What inductance is needed in order to tune this circuit to oscillate at 60 Hz?\\
+$T = 2\pi / \omega$ and $\omega = 1 / \sqrt{LC}$ can be used to relate $T, f$ to $L$ and $C$.\\
+(a) We express the period of oscillation:
+$$T = \frac{2\pi}{\omega}$$
+Taking into account that for a $LC$ circuit $\omega = 1 / \sqrt{LC}$, we substitute for $\omega$ obtaining:
+$$T = 2\pi \sqrt{LC} = 2\pi \sqrt{(2.0mH)(20\mu F)} = \fbox{1.3ms}$$
+From the equation for $\omega$ we solve for $L$:
+$$L = \frac{T^2}{4\pi^2C} = \frac{1}{4\pi^2 f^2 C} = \frac{1}{4\pi^2 (60^{-1})(80\mu F)} = \fbox{88mH}$$
+
+\paragraph{}
+30 - An LC circuit has capacitance C 0 and inductance L. A second LC circuit has capacitance 12 C 0 and inductance 2L, and a third LC circuit has capacitance 2C 0 and inductance 12 L. (a) Show that each circuit oscillates with the same frequency. (b) In which circuit would the peak current be greatest if the peak voltage across the capacitor in each circuit was the same?\\
+\\
+The expression $f_0 = 1 / 2\pi \sqrt{LC}$ can be used for the resonance frequency of a $LC$ circuit showing that each circuit oscillates with the same frequency. For (b) we can use $I_{peak} = \omega Q_0,$ where $Q_0$ is the charge of the capacitor at time zero, and the definition of capacitance $Q_0 = CV$ to express $I_{peak}$ in terms of $\omega, C, V$.\\
+We do express the resonance frequency for a $LC$ circuit 
+$$f_0 = \frac{1}{2\pi \sqrt{LC}}$$
+(a) We separate the product of $L$ and $C$ for each circuit:
+$$\text{Circuit 1:} L_1C_1 = L_1C_0,$$
+$$\text{Circuit 2:} L_2C_2 = (2L_1)(\frac{1}{2}C_0) = L_1C_1,$$
+$$\text{Circuit 3:} L_3C_3 = (\frac{1}{2}L_1)(2C_0) = L_1C_1,$$
+$$L_1C_1 = L_2C_2 = L_3C_3$$
+Therefore, the resonance frequencies of the three circuits are equal.\\
+(b) We do express the I peak in terms of the charge stored in the capacitor and $Q_0$ in terms of the capacitance of the capacitor and the potential difference across the capacitor, then we substitute:
+$$I_{peak} = \omega Q_0, \quad Q_0 = CV \Rightarrow I_{peak} = \omega CV$$
+We have I peak directly proportional to C when $\omega$ and V are held constant. Hence the circuit with a capacitance of $2C_0$ has the greatest peak current.
+
+\paragraph{}
+31 - A 5.0- $\mu$ F capacitor is charged to 30 V and is then connected across an ideal 10-mH inductor. (a) How much energy is stored in the system? (b) What is the frequency of oscillation of the circuit? (c) What is the peak current in the circuit?\\
+\\
+The energy stored in the electric field of the capacitor can be found using $U = \frac{1}{2}CV^2$, the frecuency can be found by these relations $\omega{_0} = 2\pi f_0 = 1 / \sqrt{LC}$, and I peak can be determined by using these relations $I_{peak} = \omega Q_0$ and $Q_0 = CV$.\\
+(a) We express the energy stored in the system as function of C and V, substituting its numerical values:
+$$U = \frac{1}{2}CV^2 = \frac{1}{2}(5.0\mu F)(30V)^2 = \fbox{2.3mJ}$$
+(b) We express the resonance frequency in terms of L and C, and substitute numerical values:
+$$\omega{_0} = 2\pi f_0 = \frac{1}{\sqrt{LC}} \Rightarrow f_0 = \frac{1}{2\pi \sqrt{LC}} = \frac{1}{2\pi\sqrt{(10mH)(5.0\mu F)}} = \fbox{0.71kHz}$$
+(c) I peak can be expressed in terms of the charge stored in the capacitor and $Q_0$ can be expressed in terms of the capacitance of the capacitor and the potential difference accross the capacitor, using these two, we substitute for $Q_0$:
+$$I_{peak} = \omega Q_0, \quad Q_0 = CV \Rightarrow I_{peak} = \omega CV$$
+$$I_{peak} = 2\pi (712s^{-1})(5.0 \mu F)(30V) = \fbox{0.67A}$$
+
+\paragraph{}
+32 - A coil with internal resistance can be modeled as a resistor and an ideal inductor in series. Assume that the coil has an internal resistance of 1.00 $\Omega$ and an inductance of 400 mH. A 2.00- $\mu$ F capacitor is charged to 24.0 V and is then connected across coil. (a) What is the initial voltage across the coil? (b) How much energy is dissipated in the circuit before the oscillations die out? (c) What is the frequency of oscillation the circuit? (Assume the internal resistance is sufficiently small that has no impact on the frequency of the circuit.) (d) What is the quality factor of the circuit?\\
+\\
+(a) To find the initial voltage across the coil we can apply the Kirchhoff's loop rule. (b) The total energy lost by the Joule heating is the total energy initially stored in the capacitor. (c) The natural frequency of the circuit is given by $f_0 = 1 / 2\pi \sqrt{LC}$. (d) The quality factor can be found by its definition.\\
+(a) Applying Kirchhoff's loop rule gives that initial voltage across the coil is \fbox{24.0V}\\
+(b) All the energy initially stored in the capacitor will be dissipated as Joule heat in the resistor because the ideal inductor can not dissipate energy as heat:
+$$U = \frac{1}{2}CV^2 = \frac{1}{2}(2.00\mu F)(24.0V)^2 = \fbox{0.576mJ}$$
+(c) We find the natural frequency of the circuit:
+$$f_0 = \frac{1}{2\pi \sqrt{LC}} = \frac{1}{2\pi \sqrt{(400mH)(2.00\mu F)}} = \fbox{178Hz}$$
+(d) The quality factor definition is $Q = \omega{_0} L / R$, we can substitute for $\omega{_0}$ and simpify, finally we substitute numerical values:
+$$Q = \frac{\frac{1}{\sqrt{LC}}L}{R} = \frac{1}{R}\sqrt{\frac{L}{C}} = \frac{1}{1.00\Omega}\sqrt{\frac{400mH}{2.00\mu F}} = \fbox{447}$$
+
+\paragraph{}
+33 - An inductor and a capacitor are connected, as shown in Figure 29-30. Initially, the switch is open, the left plate of the capacitor has charge Q 0 . The switch is then closed. (a) Plot both Q versus t and I versus t on the same graph, and explain how it can be seen from these two plots that the current leads the charge by 90o. (b) The expressions for the charge and for the current are given by Equations 29-38 and 29-39, respectively. Use trigonometry and algebra to show that the current leads the charge by 90o.\\
+\\
+We can obtain a differential equation for the circuit by applying Kirchhoff's loop rule, letting Q represent the instantaneous charge of the capacitor. Solving this equation we obtain an expression for the charge on the capacitor as a function of time and by differentiating this expression with respect to time, and expression for the current as a function of time.\\
+We apply Kirchhoff's loop rule to a clockwise loop just after the switch is closed:
+$$\frac{Q}{C} + L\frac{dI}{dt} = 0$$
+Substitute $I = dQ/dt$:
+$$L\frac{d^2Q}{dt^2} + \frac{Q}{C} = 0, \text{ hence } \frac{d^2Q}{dt^2} + \frac{1}{LC}Q = 0$$
+The solution to this differential equation is: $Q(t) = Q_0\cos (\omega t - \delta)$ where $\omega = \sqrt{1 / LC}$. Because $Q(0) = Q_0,$ and $\delta = 0$ and $Q(t) = Q_0\cos \omega t$. The current in the circuit is the derivative of Q with respect to t:
+$$I = \frac{dQ}{dt} = \frac{d}{dt}[Q_0 \cos \omega t] = -\omega Q_0 \sin \omega t$$
+(a) A spreadsheet program was used to plot the following graph showing both the charge on the capacitor and the current in the circuit as functions of time. L, C, and Q 0 were all arbitrarily set equal to one to obtain these graphs. Note that the current leads the charge by one-fourth of a cycle or 90 degrees.\\
+(b) The equation for the current is: $I = -\omega Q_0 \sin \omega t$, we can use the identity between sine and cosine functions: $-sin \theta = \cos \left( \theta + \frac{\pi}{2}\right)$. Using this identity we can rewrite the equation for the current:
+$$I = -\omega Q_0 \sin \omega t = \fbox{$\omega Q_0 \cos \left( \omega t + \frac{\pi}{2}\right)$}$$
+Therefore, the current leads the charge by 90 degrees.
+
+\section{Driven RL Circuits}
+\paragraph{}
+34 - A circuit consists of a resistor, an ideal 1.4-H inductor and an ideal 60-Hz generator, all connected in series. The rms voltage across the resistor is 30 V and the rms voltage across the inductor is 40 V. (a) What is the resistance of the resistor? (b) What is the peak emf of the generator?\\
+\\
+The ratio $V_R$ to $V_L$ can be used to find the resistance of the circuit. For (b) we can use the fact that in a LR circuit, $V_L$ leads $V_R$ by 90 degrees to find the ac input voltage.\\
+(a) We do express the potential differences accross R and L in terms of the common current through these components and express R in thee terms.
+$$V_L = IX_L = I\omega L, \quad V_R = IR$$
+$$\frac{V_R}{V_L} = \frac{IR}{I\omega L} = \frac{R}{\omega L} \Rightarrow R = \left( \frac{V_R}{V_L} \right)\omega L$$
+We substitute numerical values and evaluate R:
+$$R = \left( \frac{30V}{40V} \right) 2\pi (60s^{-1})(1.4H) = \fbox{$0.40k\Omega$}$$
+(b) $V_R$ leads $V_L$ by 90 degrees in a LR circuit:
+$$V_{peak} = \sqrt{2}V_{rms} = \sqrt{2}\sqrt{V_R^2 + V_L^2}$$
+$$V_{peak} = \sqrt{2} \sqrt{(30V)^2 + (40V)^2} = \fbox{71V}$$
+
+\paragraph{}
+35 - A coil that has a resistance of 80.0 $\Omega$ has an impedance of 200 $\Omega$ when driven at a frequency of 1.00 kHz. What is the inductance of the coil?\\
+\\
+The definition of $X_L$ in a $LR$ circuit can be used to find $L$.\\
+From the definition of impedance of a coil in terms of its resistance and inductive reactance we can solve for $X_L$:
+$$Z = \sqrt{R^2 + X_L^2} \Rightarrow X_L = \sqrt{Z^2 - R^2}$$
+Remember that $X_L$ can be expressed in terms of $L$, $X_L = 2\pi fL$. If we equate these equations we can solve for L:
+$$2\pi fL = \sqrt{Z^2 - R^2} \Rightarrow L = \frac{\sqrt{Z^2 - R^2}}{2\pi f}$$
+Now we only need to substitute numerical values:
+$$L = \frac{\sqrt{(200\Omega)^2-(80.0\Omega)^2}}{2\pi (1.00kHz)} = \fbox{29.2mH}$$
+
+\paragraph{}
+36 - A two conductor transmission line simultaneously carries a superposition of two voltage signals, so the potential difference between the two conductors is given by V = V 1 + V 2 , where V 1 = (10.0 V) cos($\omega{_1}$t) and V 2 = (10.0 V) cos( $\omega{_2}$t), where $\omega{_1}$ = 100 rad/s and $\omega{_2}$ = 10 000 rad/s. A 1.00 H inductor and a 1.00 k$\Omega$ shunt resistor are inserted into the transmission line as shown in Figure 29-31. (Assume that the output is connected to a load that draws only an insignificant amount of current.) (a) What is the voltage (V out ) at the output of the transmission line? (b) What is the ratio of the low-frequency amplitude to the high-frequency amplitude at the output?\\
+\\
+The two output voltage signals can be expressed as the product of the current from each source and $R = 1.00 k\Omega$. The impedance definition and given voltage signals can help us for determine the currents due to each source.\\
+(a) We do express the output voltage signals in terms of the potential difference across the resistor:
+$$V_{1,out} = I_1R \quad V_{2,out} = I_2R$$
+We need $I_1$ and $I_2$:
+$$I_1 = \frac{V_1}{Z_1} = \frac{(10.0V)\cos 100t}{\sqrt{(1.00k\Omega)^2+[(100s^{-1})(1.00H)]^2}} = (9.95mA)\cos 100t$$
+$$I_2 = \frac{V_2}{Z_2} = \frac{(10.0V)\cos 10^4t}{\sqrt{(1.00k\Omega)^2+[(10^4s^{-1})(1.00H)]^2}} = (0.995mA)\cos 10^4t$$
+Substituting these values in voltage expressions:
+$$V_{1,out} = (1.00k\Omega)(9.95mA)\cos 100t = \fbox{$(9.95V)\cos 100t$}$$
+$$V_{2,out} = (1.00k\Omega)(0.995mA)\cos 10^4t = \fbox{$(0.995V)\cos 10^4t$}$$
+where $\omega_1 = 100 rad/s$ and $\omega_2 = 10000 rad/s$
+
+\paragraph{}
+37 - A coil is connected to a 120-V rms, 60-Hz line. The average power supplied to the coil is 60 W, and the rms current is 1.5 A. Find ( a ) the power factor, ( b ) the resistance of the coil, and ( c ) the inductance of the coil. ( d ) Does the current lag or lead the voltage? Explain your answer. ( e ) Support your answer to Part ( d ) by determining the phase angle.\\
+\\
+There is a relationship between the power factor and the average power supplied to the coil $P_{av} = \mathcal{E}_{rms}I_{rms}\cos \delta$. In (b) $P_{av} = I_{rms}^2R$ this expression gives the needed relationship for R. The resistance of the coil can be found by $X_L = \omega L = R \tan \delta$ this expression relates the resistance, phase angle and inductance. By noting if the circuit is inductive, we can decide if the current leads or lags the voltage.\\
+(a) We express the average power supplied to the coil in terms of the power factor:
+$$P_{av} = \mathcal{E}_{rms}I_{rms} \cos \delta \Rightarrow \cos \delta = \frac{P_{av}}{\mathcal{E}_{rms}I_{rms}}$$
+Substituting numerical values:
+$$\cos \delta = \frac{60W}{(120V)(1.5A)} = 0.333 = \fbox{0.33}$$
+(b) We do express the power supplied by the source in terms of the resistance of the coil and substitute numerical values:
+$$P_{av} = I_{rms}^2 \Rightarrow R = \frac{P_{av}}{I_{rms}^2} = \frac{60W}{(1.5A)^2} = 26.7\Omega = \fbox{$27\Omega $}$$
+(c) We relate the inductive reactance to the resistance and phase angle, solving for L:
+$$X_L = \omega L = R \tan \delta \Rightarrow L = \frac{R \tan \delta}{\omega} = \frac{R \tan[\cos^{-1}(0.333)]}{2\pi f}$$
+$$L = \frac{(26.7\Omega)\tan (70.5^{\circ})}{2\pi (60s^{-1})} = \fbox{0.20H}$$
+(d) We just need to evaluate $X_L$:
+$$X_L = (26.7\Omega)\tan (70.5^{\circ}) = 75.4\Omega$$
+The circuite is inductive, hence the current lags the voltage.\\
+(e) From part (a):
+$$\delta = \cos^{-1}(0.333) = 72^{\circ}$$
+
+\paragraph{}
+38 - A 36-mH inductor that has a resistance of 40 $\Omega$ is connected to an ideal ac voltage source whose output is given by $\epsilon$ = (345 V) cos(150 $\pi$ t ), where t is in seconds. Determine ( a ) the peak current in the circuit, ( b ) the peak and rms voltages across the inductor, ( c ) the average power dissipation, and ( d ) the peak and average magnetic energy stored in the inductor.\\
+\\
+(a) Use $I_{peak} = \mathcal{E}_{peak}/\sqrt{R^2 + (\omega L)^2}$ and $V_{L,peak} = I_{peak}X_L = \omega LI_{peak}$ to find the peak current in the circuit and the peak voltage across the inductor. (b) Once we've found $V_{L,peak}$ we can find $V_{L,rms}$ using $V_{L,rms} = V_{L,peak} / \sqrt{2}$. (c) We can use $P_{av} = \frac{1}{2}I^2_{rms}R$ to find the average power dissipation. (d) $U_{L,peak} = \frac{1}{2}LI_{peak}^2$ to find the peak and average magnetic energy stored in the inductor. The average energy stored in the magnetic field of the inductor can be found using $U_{L,av} = \int P_{av}dt$.\\
+(a) Apply Kirchhoff's loop rule to the circuit:
+$$\mathcal{E} - IZ = 0 \Rightarrow I = \frac{\mathcal{E}}{Z} = \frac{\mathcal{E}}{\sqrt{R^2 + (\omega L)^2}}$$
+Substituting numerical values to find for I:
+$$I_{peak} = \frac{(345V)\cos (150 \pi t)}{\sqrt{(40\Omega)^2} + [(150\pi s^{-1})(36mH)]^2} = (7.94A)\cos (150\pi t) = \fbox{7.9A}$$
+(b) We can find $\mathcal{E}$ as follows:
+$$\mathcal{E} = (345V) \cos (150 \pi t)$$
+$$V_{L,peak} = \fbox{345V}$$
+$$V_{L,rms} = \frac{V_{L,peak}}{\sqrt{2}} = \frac{345V}{\sqrt{2}} = \fbox{244V}$$
+(c) We can relate the average power dissipation to $I_{peak}$ and R:
+$$P_{av} = I_{rms}^2R = \left( \frac{I_{peak}}{\sqrt{2}} \right)^2R = \frac{1}{2}I_{peak}^2R$$
+Substituting numerical values:
+$$P_{av} = \frac{1}{2}(7.94A)^2(40\Omega) = \fbox{1.3kW}$$
+(d) The maximum energy stored in the magnetic field of the inductor can be found as follows:
+$$U_{L,peak} = \frac{1}{2}LI_{peak}^2 = \frac{1}{2}(36mH)(7.94A)^2 = \fbox{1.1J}$$
+From the definition $U_{L,av} = \frac{1}{T}\int_0^TU(t)dt$ and $U(t) = \frac{1}{2}L[I(t)]^2$. We do substitute $U(t)$ and obtain:
+$$U_{L,av} = \frac{L}{2T}\int_0^T[I(t)]^2dt$$
+We evaluate the integral:
+$$U_{L,av} = \frac{L}{2T}\left[ \frac{1}{2}I_{peak}^2\right]T = \frac{1}{4}LI_{peak}^2$$
+Finally we do substitute numerical values and evaluate:
+$$U_{L,av} = \frac{1}{4}(36mH)(7.94A)^2 = \fbox{0.57J}$$
+
+\paragraph{}
+39 - A coil that has a resistance R and an inductance L has a power factor equal to 0.866 when driven at a frequency of 60 Hz. What is the coil’s power factor it is driven at 240 Hz?\\
+\\
+The relationship between $X_L$ and $R$ define the power factor when the coil is driven at a frequency of 60 Hz and then from the definition of $X_L$ we can relate the inductive reactance at 240 Hz to the inductive reactance at 60 Hz, finally we can use the power factor definition to determine it at 240 Hz.\\
+We use the definition of power factor to relate $R$ and $X_L$:
+$$\cos \delta = \frac{R}{Z} = \frac{R}{\sqrt{R^2 + X_L^2}} \Rightarrow \cos^2 \delta = \frac{R^2}{R^2 + X_L^2}$$
+We solve for 60 Hz and substitute for $\cos \delta$:
+$$X_L^2(60Hz) = R^2\left( \frac{1}{\cos^2 \delta} - 1 \right) = R^2\left( \frac{1}{(0.866)^2} - 1 \right) = \frac{1}{3}R^2$$
+We use the definition of $X_L$:
+$$X_L^2(f) = 4\pi f^2L^2 \text{ and } X_L^2(f') = 4\pi f'^2L^2$$
+Combining these two equations:
+$$\frac{X_L^2(f')}{X_L^2(f)} = \frac{4\pi f'^2L^2}{4\pi f^2L^2} = \frac{f'^2}{f^2} \Rightarrow X_L^2(f') = \left( \frac{f'}{f} \right)^2X_L^2(f)$$
+Finally we substitute numerical values:
+$$X_L^2(240Hz) = \left( \frac{240s^{-1}}{60s^{-1}} \right)^2 X_L^2(60Hz) = 16\left( \frac{1}{3}R^2 \right) = \frac{16}{3}R^2$$
+
+\paragraph{}
+40 - A resistor and an inductor are connected in parallel across an ideal ac voltage source whose output is given by E = E peak cos omega t as shown in Figure 29-32.Show that (a) the current in the resistor is given by I R = E peak /R cos omega t, (b) the current in the inductor is given by I L = E peak /X L cos( omega t – 90), and (c) the current in the voltage source is given by I = I R + I L = I peak cos( omega t – delta ), where I peak = E max / Z.\\
+\\
+
+
+
 
 
 
