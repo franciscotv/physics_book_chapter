@@ -638,12 +638,230 @@ $$P_2 = 32.0W + 13.2W = \fbox{45W}$$
 $$P_1 = 25.6W + 20.0W = \fbox{46W}$$
 $$P_2 = 32.0W + 1.64W = \fbox{34W}$$
 
+\paragraph{}
+43 - An ac circuit contains a resistor and an ideal inductor connected in series. The voltage rms drop across this series combination is 100-V and the rms voltage drop across the inductor alone is 80 V. What is the rms voltage drop across the resistor?\\
+\\
+The voltage across the resistor can be found using a phasor diagram. The phasor diagram is shown. Using the Pythagorean theorem we can express $V_R$:
+$$V_R = \sqrt{\mathcal{E}_{rms}^2} - V_L^2 = \sqrt{(100V)^2 - (80V)^2} = \fbox{60V}$$
 
+\section{Filters and Rectifiers}
+\paragraph{}
+44 - The circuit shown in Figure 29-35 is called an RC high-pass filter
+because it transmits input voltage signals that have high frequencies with greater
+amplitude than it transmits input voltage signals that have low frequencies. If the
+input voltage is given by V in = V in peak cos omega t, show that the output voltage is
+V out = V H cos( omega t – delta ) where V H = V in peak
+1 + ( omega RC ) . (Assume that the output is - 2 connected to a load that draws only an insignificant amount of current.) Show that
+this result justifies calling this circuit a high-pass filter.\\
+\\
+The phasor diagram for the RC high-pass filter is shown. $\vec V_{app}$ and $\vec V_R$ are the phasors for $V_{in}$ and $V_{out}$ respectively. Note that $\tan \delta = -X_C / R.$ That $\delta$ is negative follows from the fact that $\vec V_{app}$ lags $\vec V_R$ by $\lvert \delta \rvert$. The projection of $\vec V_{app}$ onto the horizontal axis is $V_{app} = V_{in},$ and the projection of $\vec V_R$ onto the horizontal axis is $V_R = V_{out}$. We start by expressing $V_{app}$:
+$$V_{app} = V_{app,peak} \cos \omega t \text{ where } V_{app,peak} = I_{peak}Z$$
+\begin{equation}\label{rsq}
+\text{and } Z^2 = R^2 + X_C^2
+\end{equation}
+And as $\delta < 0$:
+$$\omega t + \lvert \delta \rvert = \omega t - \delta$$
+$V_R$ is given by:
+$$V_R = V_{R,peak} \cos (\omega t - \delta) \text{ where } V_{R,peak} = V_H = I_{peak}R$$
+Then we solve the equation \ref{rsq} for Z and substitute for $X_C$:
+\begin{equation}\label{zsq}
+  Z = \sqrt{R^2 + \left( \frac{1}{\omega C} \right)^2}
+\end{equation}
+Now, because $V_{out} = V_R$ we can express:
+$$V_{out} = V_{R,peak} = \cos (\omega t - delta) = I_{in,peak}R\cos(\omega t - \delta) = \frac{V_{in peak}}{Z}R \cos (\omega t - \delta)$$
+We now use equation \ref{zsq} to substitute for Z:
+$$V_{out} = \frac{V_{in peak}}{\sqrt{R^2 + \left( \frac{1}{\omega C} \right)^2}}R \cos (\omega t - \delta)$$ 
+Simplifying this expression:
+$$V_{out} = \frac{V_{in peak}}{\sqrt{1 + (\omega RC)^{-2}}} \cos (\omega t - \delta) = \fbox{$V_H \cos (\omega t - \delta)$}$$
+$$\text{where } V_H = \frac{V_{in peak}}{\sqrt{1+(\omega RC)^{-2}}}$$
+As $\omega \rightarrow \infty$:
+$$V_H \rightarrow \frac{V_{in peak}}{\sqrt{1+(0)^2}} = V_{in peak}$$
+showing that the result is consistent with the highpass name for this circuit.
 
+\paragraph{}
+45 (a) Find an expression for the phase constant delta in Problem 44 in terms of omega , R and C. (b) What is the value of delta in the limit that omega tends 0? (c) What is the value of delta in the limit that omega tends infinity? (d) Explain your answers to Parts (b) and (c).\\
+\\
+The phasor diagram for the RC high-pass filter is shown. $\vec V_{app}$ and $V_R$ are the phasors for $V_{in}$ and $V_{out}$, respectively. The projection of $\vec V_{app}$ onto the horizontal axis is $V_{app} = V_{in}$, and the projection of $\vec V_R$ onto the horizontal axis is $V_R = V_{out}$.\\
+(a) $\vec V_{app}$ lags $V_R$ by $\delta$:
+$$\tan \delta = -\frac{V_C}{V_R} = -\frac{IX_C}{IR} = -\frac{X_C}{R}$$
+Using the definition of $X_C$ we obtain:
+$$\tan \delta = -\frac{\frac{1}{\omega C}}{R} = -\frac{1}{\omega RC}$$
+and solving for $\delta$:
+$$\delta = \fbox{$\tan^{-1} \left[ -\frac{1}{\omega RC} \right]$}$$
+(b) As $\omega \rightarrow 0$:
+$$\delta \rightarrow \fbox{$-90^{\circ}$}$$
+(c) As $\omega \rightarrow \infty$:
+$$\delta \rightarrow \fbox{0}$$
 
+\paragraph{}
+46 - Assume that in Problem 44, R = 20 kOmega and C = 15 nF. (a) At what frequency is V H = 1/2 V in peak ? This particular frequency is known as the 3 dB frequency, or f 3dB for the circuit. (b) Using a spreadsheet program, make a graph of log 10 (V H ) versus log 10 (f), where f is the frequency. Make sure that the scale extends from at least $10\%$ of the 3-dB frequency to ten times the 3-dB frequency. (c) Make a graph of delta versus log 10 (f) for the same range of frequencies as in Part (b). What is the value of the phase constant when the frequency is equal to the 3-dB frequency?\\
+\\
+The results found in problems 44 and 45 can be used to find $f_{3dB}$ and to plot graphs of $log(V_{out})$ versus $log(f)$ and $\delta$ versus $log(f)$.\\
+(a) Using the result of problem 44 to express the ratio $V_{out} / V_{in peak}$:
+$$\frac{V_{out}}{V_{in peak}} = \frac{\frac{V_{in peak}}{\sqrt{1 + (\omega RC)^{-2}}}}{V_{in peak}} = \frac{1}{\sqrt{1 + (\omega RC)^{-2}}}$$
+And now when $V_{out} = V_{in peak} / \sqrt{2}$:
+$$\frac{1}{\frac{1}{\sqrt{1 + (\omega RC)^{-2}}}} = \frac{1}{\sqrt{2}}$$
+Squaring both sides of the equation and solving for $\omega RC$ to obtain:
+$$\omega RC = 1 \Rightarrow \omega = \frac{1}{RC} \Rightarrow f_{3dB} = \frac{1}{2\pi RC}$$
+We now substitute numerical values and evaluate:
+$$f_{3dB} = \frac{1}{2\pi (20k\Omega)(15nF)} = \fbox{0.53kHz}$$
+(b) Using result from problem 44 we have:
+$$V_{out} = \frac{V_{in peak}}{\sqrt{1 + (\omega RC)^{-2}}}$$
+And in problem 45 we showed that:
+$$\delta = \tan^{-1} \left[ -\frac{1}{\omega RC} \right]$$
+We rewrite these expressins in terms of $f_{3dB}$:
+$$V_{out} = \frac{V_{in peak}}{\sqrt{1 + \left( \frac{1}{2\pi fRC} \right)^2}} = \frac{V_{peak}}{\sqrt{1 + \left( \frac{f_{3dB}}{f}\right)^2}}$$
+and
+$$\delta = \tan^{-1} \left[ -\frac{1}{2\pi fRC} \right] = \tan^{-1} \left[ -\frac{f_{3dB}}{f} \right]$$
+A spreadsheet program to generate the data for a graph of $V_{out}$ versus $f$ and $\delta$ versus $f$ is shown, including formulas used to calculate the quantities in columns:
+\begin{tabular}{| l | c | c |}
+  \hline
+  Cel & Formula/Content & Algebraic Form \\
+  \hline
+  B1 & 2.00E+03 & R \\
+  \hline
+  B2 & 1.50E-08 & C \\
+  \hline
+  B3 & 1 & $V_{in peak}$\\
+  \hline
+  B4 & 531 & $f_{3dB}$\\
+  \hline
+  A8 & 53 & $0.1f_{3db}$\\
+  \hline
+  C8 & \$B\$3/SQRT(1+(1(\$B\$4/A8))\^{} 2) & $\frac{V_{in peak}}{\sqrt{1 + \left( \frac{f_{3dB}}{f} \right)^2}}$\\
+  \hline
+  D8 & LOG(C8) & $log(V_{out}$\\
+  \hline
+  E8 & ATAN(-\$B\$4/A8) & $\tan^{-1}\left[ -\frac{f_{3dB}}{f} \right]$\\
+  \hline
+  F8 & E8*180/PI() & $\delta$ in degress\\
+  \hline
+\end{tabular}
 
+The graph of $log(V_{out}$ versus $log(f)$ is shown for $V_{in peak} = 1V$.\\
+A graph of $\delta$ in degrees as a function of $log(f)$ is shown.\\
+As shown by the spreadsheet program, we can see that when $f = f_{3dB}$, $\delta \approx \fbox{$-44.9^{\circ}$}$. This result agrees with its calculated value of $\fbox{$-45.0^{\circ}$}$
 
+\paragraph{}
+47 - A slowly varying voltage signal V(t) is applied to the input of the high-pass filter of Problem 44. Slowly varying means that during one time constant (equal to RC) there is no significant change in the voltage signal. Show that under these conditions the output voltage is proportional to the time derivative of V(t). This situation is known as a differentiation circuit.\\
+\\
+Using the Kirchhoff's loop rule we can obtain a differential equation relating the input, capacitor, and resistor voltages. Because the voltage drop across the ressistor is small compared to the voltage drop across the capacitor, we can express the voltage drop across the capacitor in terms of the input voltage.\\
+First apply Kirchhoff's loop rule to the input side of the filter:
+$$V(t) - V_C -IR = 0$$
+where $V_C$ is the potential difference across the capacitor.\\
+The we substitute for $V(t)$ and I to obtain:
+$$V_{in peak}\cos \omega t - V_C - R\frac{dQ}{dt} = 0$$
+And because $Q = CV_C$:
+$$\frac{dQ}{dt} = \frac{d}{dt}[CV_C] = C\frac{dV_C}{dt}$$
+Substituting we obtain:
+$$V_{peak} \cos \omega t - V_C - RC\frac{dVC}{dt} = 0$$
+the differential equation describing the potential difference across the capacitor.\\
+There is no significant change in the voltage signal during one time constant, so we can express:
+$$\frac{dV_C}{dt} = 0 \Rightarrow RC\frac{dV_C}{dt} = 0$$
+Substituting for $RC\frac{dV_C}{dt}$ yields:
+$$V_{in peak} \cos \omega t - V_C = 0$$
+and
+$$V_C = V_{in peak}\cos \omega t$$
+As a consequence, the potential difference across the resistor is given by:
+$$V_R = RC\frac{dV_C}{dt} = \fbox{$RC\frac{d}{dt}[V_{in peak}\cos \omega t]$}$$
 
+\paragraph{}
+48 - We can describe the output from the high-pass filter from Problem 44 using a decibel scale: beta = ( 20 dB ) log 10 ( V H V in peak ) , where beta is the output in decibels. Show that for V H = 1 / sqrt2 V in peak , beta = 3.0 dB. The frequency at which VH = 1 / sqrt2 V in peak is known as f 3dB (the 3-dB frequency). Show that for $f << f 3dB$ , the output beta drops by 6 dB if the frequency f is halved.\\
+\\
+We use the expression found for $V_H$ in problem 44 and the definition of $\beta$ given in the problem statement to show that every time the frequency is halved, the output drops by 6 dB.\\
+This equation we have from problem 44:
+$$V_H = \frac{V_{in peak}}{\sqrt{1 + (\omega RC)^{-2}}}$$
+or
+$$\frac{V_H}{V_{in peak}} = \frac{1}{\sqrt{1 + (\omega RC)^{-2}}}$$
+We need to express this ratio in terms of $f$ and $f_{3dB}$, we simplify as well:
+$$\frac{V_H}{V_{peak}} = \frac{1}{\sqrt{1 + \left( \frac{f_{3dB}}{f} \right)^2}} = \frac{f}{\sqrt{f_{3dB}^2\left( \frac{f^2}{f_{3dB}^2} \right)}}$$
+For $f << f_{3dB}$:
+$$\frac{V_H}{V_{peak}} \approx \frac{f}{\sqrt{f_{3dB}^2 \left( 1 + \frac{f^2}{f_{3dB}^2} \right)}} = \frac{f}{f_{3dB}}$$
+Using the $\beta$ definition we have:
+$$\beta = 20log_{10} \left( \frac{V_H}{V_{peak}} \right)$$
+Substituting for $V_H / V_{peak}$ we obtain:
+$$\beta = 20log_{10} \left( \frac{f}{f_{3dB}} \right)$$
+If we double the frequency we obtain:
+$$\beta' = 20log_{10} \left( \frac{\frac{1}{2}f}{f_{3dB}} \right)$$
+The decibel level change is given by:
+$$\Delta \beta = \beta' - \beta = 20 log_{10}\left(\frac{\frac{1}{2}f}{f_{3dB}}\right) - 20log_{10}\left(\frac{f}{f_{3dB}}\right) = 20log_{10}(1/2) \approx \fbox{-6dB}$$
+
+\paragraph{}
+49 - Show that the average power dissipated in the resistor of the high-pass filter of Problem 44 is given by (formula)\\
+\\
+The instantaneous power dissipated in the resistor can be expressed, then using the fact that the average value of the square of the cosine function over one cycle is half to establish the given result.\\
+The instantaneous power P(t) dissipated in the resistor is:
+$$P(t) = \frac{V_{out}^2}{R}$$
+The output voltage is:
+$$V_{out} = V_H\cos (\omega t - \delta)$$
+Taking from problem 44:
+$$V_H = \frac{V_{in peak}}{\sqrt{1 + (\omega RC)^{-2}}}$$
+Substitute in the expression for P(t):
+$$P(t) = \frac{V_H^2}{R} \cos (\omega t - \delta) = \frac{V_{in peak}^2}{R[1 + (\omega RC)^{-2}]} \cos (\omega t - \delta)$$
+And taking in consideration that the average value of the square of the cosine function over one cycle is one half:
+$$P_{av} = \fbox{$\frac{V_{in peak}^2}{2R[1 + (\omega RC)^{-2}]}$}$$
+
+\paragraph{}
+50 - One application of the high-pass filter of Problem 44 is a noise filter
+for electronic circuits (a filter that blocks out low-frequency noise). Using a resistance value of 20 k Omega, find a value for the capacitance for the high-pass filter that attenuates a 60-Hz input voltage signal by a factor of 10. That is, so V H = 1 / 10 V in peak.\\
+\\
+We should solve the expression for $V_H$ from problem 44 for the required capacitance of the capacitor.\\
+Taking the expression from problem 44:
+$$V_H = \frac{V_{in peak}}{\sqrt{1 + (\omega RC)^{-2}}}$$
+And we do require that:
+$$\frac{V_H}{V_{in peak}} = \frac{1}{\sqrt{1 + (\omega RC)^{-2}}} = \frac{1}{10}$$
+or
+$$\sqrt{1 + (\omega RC)^{-2}} = 10$$
+If we do solve for C yields:
+$$C = \frac{1}{\sqrt{99}\omega R} = \frac{1}{2\pi \sqrt{99}Rf}$$
+Now we finally substitute numerical values and evaluate:
+$$C = \frac{1}{2\pi(20k\Omega)(60Hz)} = \fbox{13nF}$$
+
+\paragraph{}
+51 - The circuit shown in Figure 29-36 is an example of a low-pass filter. (Assume that the output is connected to a load that draws only an insignificant amount of current.) (a) If the input voltage is given by V in = V in peak cos omega t, show that the output voltage is V out = V L cos( omega t – delta ) where V L = V in peak 1 + ( omega RC ) . (b) Discuss the trend of the output voltage in the limiting cases omega tends to 0 and infinity.\\
+\\
+The phasor diagram for the RC low-pass filter shows that $\vec V_{app}$ and $\vec V_C$ are the phasors for $V_{in}$ and $V_{out}$ respectively. The projection of $\vec V_{app}$ onto the horizontal axis is $V_{app} = V_{in}$, the projection of $\vec V_C$ onth the horizontal axis is $V_C = V_{out}$, $V_{peak} = \lvert \vec V_{app} \rvert$, and $\phi$ is the angle between $\vec V_C$ and the horizontal axis.\\
+(a)
+We express $V_{app}$:
+$$V_{app} = V_{in peak} \cos \omega t \text{ where } V_{in peak} = I_{peak}Z$$
+\begin{equation}\label{Zand}
+  \text{ and } Z^2 = R^2 + X_C^2
+\end{equation}
+$V_{out} = V_C$ is given by:
+$$V_{out} = V_{C,peak} = \cos \phi = I_{peak}X_C \cos \phi$$
+Now we define $\delta$ as shown in the phasor diagram:
+$$V_{out} = I_{peak}X_C \cos (\omega t - \delta) = \frac{V_{in peak}}{Z}X_C \cos (\omega t - \delta)$$
+Solving equation \ref{Zand} for Z and substituting $X_C$:
+\begin{equation}\label{zsqrt}
+  Z = \sqrt{R^2 + \left( \frac{1}{\omega C} \right)^2}
+\end{equation}
+We can use equation \ref{zsqrt} to substitute for Z and substitute for $X_C$:
+$$V_{out} = \frac{V_{in peak}}{\sqrt{R^2 + \left( \frac{1}{\omega C} \right)^2}} \left( \frac{1}{\omega C} \right) \cos (\omega t - \delta)$$
+If we simplify further we can obtain:
+$$V_{out} = \frac{V_{in peak}}{\sqrt{1 + (\omega RC)^2}} \cos (\omega t - \delta)$$
+or
+$$V_{out} = \fbox{$V_L \cos (\omega t - \delta)$} \text{ where } V_L = \fbox{$\frac{V_{in peak}}{\sqrt{1 + (\omega RC)^2}}$}$$
+(b) We can note that as $\omega \rightarrow 0, V_L \rightarrow V_{peak}$. This is physically feasible as for low frequencies $X_C$ is large and hence a larger peak input voltage will appear across it than appears across it for high frequencies.\\
+Yet another note is that as $\omega \rightarrow \infty, V_L \rightarrow 0$. This is physically feasible since, for high frequencies, $X_C$ is small and, hence, a smaller peak voltage will appear across it than appears it for low frequencies.\\
+Remarks: In Figures 29-19 and 29-20, $\delta$ is defined as the phase of the
+voltage drop across the combination relative to the voltage drop across
+the resistor.
+
+\paragraph{} 
+52 (a) Find an expression for the phase angle delta for the low-pass filter of Problem 51 in terms of omega , R and C. (b) Find the value of delta in the limit that omega tends 0 and in the limit that omega tends infinity. Explain your answer.\\
+\\
+The phasor diagram for the RC low-pass filter is shown. $\vec V_{app}$ and $\vec V_C$ are the phasors for $V_{in}$ and $V_{out}$ respectively. The projection of $\vec V_{app}$ onto the horizontal axis is $V_{app} = V_{in}$ and the projection of $\vec V_C$ onto the horizontal axis is $V_C = V_{out}$. $V_{peak} = \lvert \vec V_{app} \rvert$.\\
+(a) Analyzing the phasor diagram we have:
+$$\tan \delta = \frac{V_R}{V_C} = \frac{I_{peak}R}{I_{peak}X_C} = \frac{R}{X_C}$$
+and from the $X_C$ definition we obtain:
+$$\tan \delta = \frac{R}{\frac{1}{\omega C}} = \omega RC$$
+Solving for $\delta$:
+$$\delta = \fbox{$\tan^{-1}(\omega RC)$}$$
+(b) As $\omega \rightarrow 0, \delta \rightarrow \fbox{$0^{\circ}$}$. This behaviour makes sense physically in that, at low frequencies, $X_C$ is very large compared to R and, as a consequence, $V_C$ is in phase with $V_{in}$.\\
+As $\omega \rightarrow \infty, \delta \rightarrow \fbox{$90^{\circ}$}$. This behaviour makes sense physically in that, at high frequencies, $X_C$ is very small compared to R and, as a consequence, $V_C$ is out of phase with $V_{in}$\\
+Remarks: See the spreadsheet solution in the following problem for additional evidence that our answer for Part (b) is correct.
+
+\paragraph{}
 
 
 \end{document}
