@@ -862,6 +862,114 @@ As $\omega \rightarrow \infty, \delta \rightarrow \fbox{$90^{\circ}$}$. This beh
 Remarks: See the spreadsheet solution in the following problem for additional evidence that our answer for Part (b) is correct.
 
 \paragraph{}
+53 Using a spreadsheet program, make a graph of V L versus input frequency f and a graph of phase angle delta versus input frequency for the low-pass filter of Problems 51 and 52. Use a resistance value of 10 kOmega and a capacitance value of 5.0 nF.\\
+\\
+In problems 51 and 52 we derived expressions for $V_L$ and $\delta$ to plot graphs of $V_L$ versus $f$ and $\delta$ versus $f$ for the low-pass filter of problem 51. We express $V_L$ and $\delta$ as functions of $f_{3dB}$ to simplify the spreadsheet program.\\
+From problems 51 and 52 we have:
+$$V_L = \frac{V_{in peak}}{\sqrt{1 + (\omega  RC)^2}}$$
+and
+$$\delta = \tan^{-1} (\omega RC)$$
+We express these expressions in terms of $f$ and obtain:
+$$V_L = \frac{V_{in peak}}{\sqrt{1 + (2\pi fRC)^2}}$$
+and
+$$\delta = \tan^{-1} (2\pi fRC)$$
+In the table we show a spreadsheet program to generate the data for graphs of $V_L$ versus $f$ and $\delta$ versus $f$ for the low-pass filter. $V_{in peak}$ has been arbitrarily set equal to 1. The formulas used to calculate the quantities are shown in the columns:\\
+\begin{tabular}{| l | c | c |}
+  \hline
+  Cel & Formula/Content & Algebraic Form \\
+  \hline
+  B1 & 2.00E+03 & R \\
+  \hline
+  B2 & 1.50E-09 & C \\
+  \hline
+  B3 & 1 & $V_{in peak}$\\
+  \hline
+  B8 & \$B\$3/SQRT(1+((2*PI()*A8*1000*\$B\$1*\$B\$2)\^{}2)) & $\frac{V_{in peak}}{\sqrt{1 + (2\pi fRC)^2}}$\\
+  \hline
+  C8 & ATAN(2*PI()*A8*1000*\$B\$1*\$B\$2) & $\tan^{-1} (2\pi fRC)$\\
+  \hline
+  D8 & C8*180/PI() & $\delta$ in degrees\\
+  \hline
+\end{tabular}
+A graph of $V_L$ as function of $f$ is shown:\\
+A graph of $\delta$ as a function of $f$ is shown:\\
+
+\paragraph{}
+54 - A rapidly varying voltage signal V(t) is applied to the input of the low-pass filter of Problem 51. Rapidly varying means that during one time constant (equal to RC) there are significant changes in the voltage signal. Show that under these conditions the output voltage is proportional to the integral of V(t) with respect to time. This situation is known as an integration circuit.\\
+\\
+The Kirchhoff's loop rule can be used to find a differential equation relating the input, capacitor, and resistor voltages. Then we assume a solution for this equation that is a linear combination of sine and cosine terms with coefficients that we can find by substitution in the differential equation. The solution of these simultaneous equations will yield the amplitude of the output voltage.\\
+First we apply Kirchhoff's loop rule to the input side of the filter to obtain $V(t) - IR V_C = 0$, where $V_C$ is the potential difference across the capacitor.\\
+We substitute for $V(t)$ and I:
+$$V_{in peak} \cos \omega t - R\frac{dQ}{dt} - V_C = 0$$
+And because $Q = CV_C$:
+$$\frac{dQ}{dt} = \frac{d}{dt}[CV_C] = C\frac{dV_C}{dt}$$
+Sustituting for $dQ / dt$:
+$$V_{in peak} \cos \omega t - RC \frac{dV_C}{dt} - V_C = 0$$
+the differential equation describing the potential difference across the capacitor.\\
+$V_C$ is given by $V_C = IX_C = \frac{1}{\omega C}$. $V(t)$ varies rapidly meaning that $\omega >> 1$, therefore, $V_C \approx 0$, and:
+$$V_{peak} \cos \omega t -RC \frac{dV_C}{dt} = 0$$
+Separating variables in the differential equation and solve for $V_C$:
+$$V_C = \fbox{$\frac{1}{RC}\int V_{peak} \cos \omega t dt$}$$
+
+\paragraph{}
+55 - The circuit shown in Figure 29-37 is a trap filter. (Assume that the output is connected to a load that draws only an insignificant amount of current.) (a) Show that the trap filter acts to reject signals in a band of frequencies centered at omega = 1/ LC . (b) How does the width of the frequency band rejected depend on the resistance R?\\
+\\
+The phasor diagram for the trap filter is shown. $\vec V_{app}$ and $\vec V_L + \vec V_C$ are the phasors for $V_{in}$ and $V_{out}$ respectively. The projection of $\vec V_{app}$ onto the horizontal axis is $V_{app} = V_{in}$, and the projection of $\vec V_L + \vec V_C$ onto the horizontal axis is $V_L + V_C = V_{out}$. We assume the impedance of the trap to be zero, then the frequency at which the circuits rejects signals will be shown. If we define $\Delta \omega = \lvert \omega - \omega_{trap} \rvert$ and do we require that $\lvert Z_{trap} \rvert = R$ will yield and expression for the bandwidth and reveal its dependence on R.\\
+Expressing $V_{app}$:
+$$V_{app} = V_{app, peak} \cos \omega t$$
+where $V_{app, peak} = V_{peak} = I_{peak}Z$ and
+\begin{equation}\label{zpeaks}
+  Z^2 = R^2 + (X_L - X_C)^2
+\end{equation}
+On the other hand, $V_{out}$ is given by:
+$$V_{out} = V_{out, peak} \cos (\omega t - \delta)$$
+where $V_{out, peak} = I_{peak}Z_{trap}$ and $Z_{trap} = X_L - X_C$.\\
+Solving for Z in equation \ref{zpeaks} yields:
+\begin{equation}\label{zsqrt}
+  Z^2 = \sqrt{R^2 + (X_L - X_C)^2}
+\end{equation}
+And because $V_{out} = V_L + V_C$:
+$$V_{out} = V_{out, peak} \cos (\omega t - \delta) = I_{peak}Z_{trap} \cos (\omega t - \delta)$$
+$$= \frac{V_{peak}}{Z}Z_{trap} \cos (\omega t - \delta)$$
+We can use equation \ref{zsqrt} to substitute for Z:
+$$V_{out} = \frac{V_{peak}}{\sqrt{R^2 + Z_{trap}^2}} Z_{trap} \cos (\omega t - \delta)$$
+Provided that $Z_{trap} = 0$, we note that $V_{out} = 0$, then set $Z_{trap} = 0$ and obtain $Z_{trap} = X_L - X_C = 0$. Substituting for $X_L$ and $X_C$ yields:
+$$\omega L - \frac{1}{\omega C} = 0 \Rightarrow \omega = \fbox{$\frac{1}{\sqrt{LC}}$}$$
+(b) We have as bandwith:
+\begin{equation}\label{bwt}
+  \Delta \omega = \lvert \omega - \omega_{trap} \rvert
+\end{equation}
+We use bandwith definition involving the frequency at which $\lvert Z_{trap} \rvert = R$. Then:
+$$\omega L - \frac{1}{\omega C} = R \Rightarrow \omega^2 LC - 1 = \omega RC$$
+And because $\omega_{trap} = 1 / \sqrt{LC}$:
+$$\left( \frac{\omega}{\omega_{trap}} \right)^2 - 1 = \omega RC$$
+We solve for $\omega^2 - \omega_{trap}^2$:
+$$\omega^2 - \omega_{trap}^2 = (\omega - \omega_{trap})(\omega + \omega_{trap})$$
+And because $\omega \approx \omega_{trap}, \omega + \omega_{trap} \approx 2\omega_{trap}$:
+$$\omega^2 - \omega_{trap}^2 \approx 2\omega_{trap}(\omega - \omega_{trap})$$
+Now substitute in equation \ref{bwt} to obtain:
+$$\Delta \omega = \lvert \omega - \omega_{trap} \rvert = \frac{RC\omega_{trap}^2}{2} = \fbox{$\frac{R}{2L}$}$$
+
+\paragraph{}
+56 - The output voltage will mirror input voltage minus a 0.60 V drop for voltages greater than 0.60 V. When the voltage is below 0.60 V, the output voltage will be zero. A spreadsheet program was utilized to plot the following graph. The peak voltage and angular frequency were both arbitrarily set equal to one.\\
+
+\paragraph{}
+57 - The time constant for the RC circuit and the frequency of the input signal can be related through the use of the potential difference decay across the capacitor. An approximate value for C can be found by expanding the exponential factor in the expression for $V_C$. The C value will limit the variation in the output voltage by less than 50 percent.\\
+We find the voltage across the capacitor:
+$$V_C = V_{in} e^{-t / RC}$$
+If we expend the exponential factor:
+$$e^{-t / RC} \approx 1 - \frac{1}{RC}t$$
+And for a decay of less than 50 percent:
+$$1 - \frac{1}{RC}t \le 0.5 \Rightarrow C \le \frac{2}{R}t$$
+And finally, the voltage is positive at every cycle, $t = 1 / 60 s$:
+$$C \le \frac{2}{1.00k\Omega}\left( \frac{1}{60}s \right) = \fbox{$33\mu F$}$$
+
+\paragraph{}
+58 - The current lags the voltage across the inductor and leads the voltage across a capacitor. If we use $I_{L, peak} = \mathcal{E}_{peak} / X_L$ and $I_{C, peak} = \mathcal{E}_{peak}X_C$ to find the amplitudes for these currents.
+
+
+
+
 
 
 \end{document}
