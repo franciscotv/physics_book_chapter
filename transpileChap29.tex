@@ -1104,6 +1104,111 @@ $$I_{rms} = \frac{\mathcal{E}_{rms}}{Z} = \frac{\mathcal{E}_{max}}{\sqrt{2}Z} = 
 (f) We find $\delta$ as follows:
 $$\delta = \tan^{-1} \left( \frac{X_L - X_C}{R} \right) = \tan^{-1} \left( \frac{80 \Omega - 62.5 \Omega}{5.0 \Omega} \right) = \fbox{$74^{\circ}$}$$
 
+\paragraph{}
+65 - $Q = \omega L / R$ gives us the Q factor of the circuit, the resonance width by $\Delta f = f_0 / Q = \omega_0 / 2 \pi Q$, and the power factor by $\cos \delta = R / Z$. Z is frequency dependent, hence we need to find $X_C$ and $X_L$ at $\omega = 8000 rad / s$ to be able to evaluate $\cos \delta$.\\
+Let's use above definitions to express Q factor and resonance width of the circuit:
+\begin{equation}\label{cu}
+  Q = \frac{\omega_0 L}{R}
+\end{equation}
+and
+\begin{equation}\label{delf}
+ \Delta f = \frac{f_0}{Q} = \frac{\omega_0}{2 \pi Q}
+\end{equation}
+(a) We begin by expressin the resonance frequency for the circuit:
+$$\omega_0 = \frac{1}{\sqrt{LC}}$$
+Substituting in equation \ref{cu}:
+$$Q = \frac{1}{\sqrt{LC} R} = \frac{1}{r}\sqrt{\frac{L}{C}}$$
+Substituting numerical values and evaluating:
+$$Q = \frac{1}{5.0 \Omega} \sqrt{\frac{10 mH}{2.0 \mu F}} = 14.1$$
+Substitute numerical values in equation \ref{delf} and evaluate:
+$$\Delta f = \frac{7.07 \times 10^3 rad / s}{2 \pi (14.1)} = \fbox{80 Hz}$$
+(c) The power factor of the circuit is given by:
+$$\cos \delta = \frac{R}{Z} = \frac{R}{\sqrt{R^2 + (X_L - X_C)^2}} = \frac{R}{\sqrt{R^2 + \left( \omega L - \frac{1}{\omega C}\right)^2}}$$
+Substituting numerical values an evaluating for $\cos \delta$:
+$$\cos \delta = \frac{5.0 \Omega}{\sqrt{(5.0 \Omega)^2 + \left( (8000s^{-1})(10 mH) - \frac{1}{(8000s^{-1})(2.0 \mu F)} \right)^2}} = \fbox{0.27}$$
+
+\paragraph{}
+66 - The Q factor for the circuit can be found from its definition $Q = f_0 / \Delta f$. Only substitute the numerical values.
+$$Q = \frac{100.1 MHz}{0.050 MHz} \approx \fbox{$2.0 \times 10^3$}$$
+
+\paragraph{}
+67 - From the current definition $I_{peak} = \mathcal{E}_{peak} / Z$ to find the current in the coil and the definition of the phase angle to evaluate $\delta$. We can equate $X_L$ and $X_C$ to find the capacitance required so that the current and the voltage are in phase. $V_C =IX_C$ can be used to find the measured voltage across the capacitor.\\
+(a) We express the current in the coil in terms of the potential difference across it and its impedance:
+$$I_{peak} = \frac{\mathcal{E}_{peak}}{Z} = \frac{100 V}{10 \Omega} = \fbox{10 A}$$
+(b) The phase angle $\delta$ is given by the next definition, and substitute numerical values to evaluate:
+$$\delta = \cos^{-1} \left( \frac{R}{Z} \right) = \sin^{-1} \left( \frac{X_L}{Z} \right) = \sin^{-1} \left( \frac{8.0 \Omega}{10 \Omega} \right) = \fbox{$53^{\circ}$}$$
+(c) Expressing the condition on the on the reactances that must be satisfied if the current and voltage are to be in phase:
+$$X_L = X_C = \frac{1}{\omega C} \Rightarrow C = \frac{1}{\omega X_L} = \frac{1}{2 \pi fX_L}$$
+Substituting numerical values:
+$$C = \frac{1}{2 \pi (60s^{-1})(8.0 \Omega)} = 332 \mu F = \fbox{0.33 mF}$$
+(d) Expressing the potential difference across the capacitor:
+$$V_C = I_{peak}X_C$$
+And relate the peak current in the circuit to the impedance of the circuit when $X_L = X_C$:
+$$I_{peak} = \frac{V_{peak}}{R}$$
+Substituting for the current:
+$$V_C = \frac{V_{peak}X_C}{R} = \frac{V_{peak}}{2 \pi fCR}$$
+Now we need to relate the impedance of the circuit to the resistance of the coil:
+$$Z = \sqrt{R^2 + X^2} \Rightarrow R = \sqrt{Z^2 - X^2}$$
+We substitute for R:
+$$V_C = \frac{V_{peak}}{2 \pi fC \sqrt{Z^2 - X^2}}$$
+Finally substitute numerical values and evaluate:
+$$V_C = \frac{100 V}{2 \pi (60s^{-1})(332 \mu F)\sqrt{(10 \Omega)^2 - (8.0 \Omega)^2}} = \fbox{0.13 kV}$$
+
+\paragraph{}
+68 - $V_C = I_{rms}X_C$ and $I_{rms}$ from the potential difference across the inductor can serve to find C. If the resistance in the circuit vanishes, the measured rms voltage across both the capacitor and inductor is $V = \lvert V_L - V_C \rvert$.\\
+(a) We find a relationship between the capacitance C and the potential difference across the capacitor:
+$$V_C = I_{rms}X_C = \frac{I_{rms}}{2 \pi fC} \Rightarrow C = \frac{I_{rms}}{2 \pi fV_C}$$
+Using the potential difference across the inductor to express the rms current in the circuit:
+$$I_{rms} = \frac{V_L}{X_L} = \frac{V_L}{2 \pi fL}$$
+Substituting for the $I_{rms}$ and using numerical values:
+$$C = \frac{V_L}{(2 \pi f)^2LV_C} = \frac{50 V}{[2 \pi (60s^{-1})]^2(0.25 H)(75 V)} = \fbox{$19 \mu F$}$$
+(b) We need to express the measured rms voltage V across both the capacitor and the inductor when $R = 0$:
+$$V = \lvert V_L - V_C \rvert$$
+Finally we substitute numerical values and evaluate:
+$$V = \lvert 50 V - 75 V \rvert = \fbox{25 V}$$
+
+\paragraph{}
+69 - The potential differences across each of the circuit elements can be found by the rms current in the circuit. Phasor diagrams and our knowledge of the phase shifts between the voltages across the three circuit elements to find the voltage diferrences across their combinations.\\
+(a) We do express the potential diffenrence between points A and B in terms of $I_{rms}$ and $X_L$:
+\begin{equation}\label{voltab}
+  V_{AB} = I_{rms}X_L
+\end{equation}
+Expressing $I_{rms}$ in terms of $\mathcal{E}$ and Z:
+$$I_{rms} = \frac{\mathcal{E}}{Z} = \frac{\mathcal{E}}{\sqrt{R^2 + (X_L - X_C)^2}}$$
+We evaluate $X_L$ and $X_C$ to obtain:
+$$X_L = 2 \pi fL = 2 \pi (60s^{-1})(137 mH) = 51.648 \Omega$$
+and
+$$X_C = \frac{1}{2 \pi fC} = \frac{1}{2 \pi (60s^{-1})(25 \mu F)} = 106.10 \Omega$$
+We evaluate for $I_{rms}$:
+$$I_{rms} = \frac{115 V}{\sqrt{(50 \Omega)^2 + (51.648 \Omega - 106.10 \Omega)^2}} = 1.5556 A$$
+Substitute numerical values in equation \ref{voltab} and evaluate:
+$$V_{AB} = (1.5556 A)(51.648 \Omega) = 80.344 V = \fbox{80V}$$
+(b) We express the potential difference between points B and C in terms of $I_{rms}$ and R:
+$$V_{BC} = I_{rms}R = (1.5556 A)(50 \Omega) = 77.780 V = \fbox{78 V}$$
+(c) Expressing the potential difference between points C and D in terms of $I_{rms}$ and $X_C$:
+$$V_{CD} = I_{rms}X_C = (1.5556 A)(106.10 \Omega) = 165.05 V = \fbox{0.17 kV}$$
+(d) The voltage across the inductor leads the voltage across the resistor as shown in the phasor diagram. We can use the Pythagorean theorem to find $V_{AC}$
+$$V_{AC} = \sqrt{V_{AB}^2 + V_{BC}^2} = \sqrt{(80.0 V)^2 + (77.780 V)^2} = 111.58 V = \fbox{0.11 kV}$$
+(e) The voltage across the capacitor lags the voltage across the resistor as shown in the phasor diagram and use the Pythagorean to find $V_{BD}$:
+$$V_{BD} = \sqrt{V_{CD}^2 + V_{BC}^2}$$
+$$= \sqrt{(165.05 V)^2 + (77.780 V)^2} = \fbox{182.46 V}$$
+
+\paragraph{}
+70 - We can find the power supplied to the circuit by $P_{av} = \mathcal{E}_{rms}I_{rms}\cos \delta$ and the resistance can be found by $P_{av} = I_{rms}^2R$. In (c) the impedance, inductive reactance, and resistance can be related to the capacitive reactance and solve for the capacitance C. We can use the condition on $X_L$ and $X_C$ at resonance to find the capacitance or inductance you would need to add to the circuit to make the power factor equal to 1.\\
+(a) We begin by expressing the power supplied to the circuit in terms of $\mathcal{E}_{rms}, I_{rms}$ and the power factor $\cos \delta$ and substitute numerical values:
+$$P_{av} = \mathcal{E}_{rms}I_{rms} \cos \delta = (120 V)(11 A) \cos 45^{\circ} = 933 W$$
+(b) We relate the resistance to the power dissipated in the circuit:
+$$P_{av} = I_{rms}^2 \Rightarrow R = \frac{P_{av}}{I_{rms}^2}$$
+Substituting numerical values and evaluating:
+
+
+
+
+
+
+
+
+
 
 
 
