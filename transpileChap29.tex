@@ -965,8 +965,144 @@ And finally, the voltage is positive at every cycle, $t = 1 / 60 s$:
 $$C \le \frac{2}{1.00k\Omega}\left( \frac{1}{60}s \right) = \fbox{$33\mu F$}$$
 
 \paragraph{}
-58 - The current lags the voltage across the inductor and leads the voltage across a capacitor. If we use $I_{L, peak} = \mathcal{E}_{peak} / X_L$ and $I_{C, peak} = \mathcal{E}_{peak}X_C$ to find the amplitudes for these currents.
+58 - The current lags the voltage across the inductor and leads the voltage across a capacitor. If we use $I_{L, peak} = \mathcal{E}_{peak} / X_L$ and $I_{C, peak} = \mathcal{E}_{peak}X_C$ to find the amplitudes for these currents. The current in the generator is zero under resonance conditions, that is, when $\lvert I_L \rvert = \lvert I_C \rvert$. For finding the currents in the inductor and capacitor at resonance, we can use the shared potential difference across them and their reactances together with our knowledge of the phase relationships just mentioned.\\
+(a) We do express the currents amplitudes through the inductor and capacitor:
+$$I_{L_ peak} = \frac{\mathcal{E}_{peak}}{X_L} = \frac{\mathcal{E}_{peak}}{2\pi fL}$$
+and
+$$I_{C_ peak} = \frac{\mathcal{E}_{peak}}{X_C} = \frac{\mathcal{E}_{peak}}{\frac{1}{2\pi fC}} = 2 \pi fC\mathcal{E}_{peak}$$
+Substituting numerical values:
+$$I_{L, peak} = \frac{100V}{(4.00H)2 \pi f} = \fbox{$\frac{25.0V/H}{2 \pi f}, \text{ lagging } \mathcal{E} \text{ by } 90^{\circ}$}$$
+and
+$$I_{C, peak} = (25.0 \mu F)(100V) \omega = \fbox{$(2.5mV \cdot F)2 \pi f, \text{ leading } \mathcal{E} \text{ by } 90^{\circ}$}$$
+(b) We do express the condition that $I = 0$:
+$$\lvert I_L \rvert = \lvert I_C \rvert \text{ or } \frac{\mathcal{E}}{\omega L} = \frac{\mathcal{E}}{\frac{1}{\omega C}} = \omega C\mathcal{E} \Rightarrow \omega = \frac{1}{\sqrt{LC}}$$
+Now we substitute numerical values and evaluate $\omega$:
+$$\omega = \frac{1}{\sqrt{(4.00H)(25.0 \mu F)}} = \fbox{100 rad/s}$$
+We use numerical values expressing the current in the inductor at $\omega = \omega_0$:
+$$I_L = \left( \frac{25.0V/H}{100s^{-1}} \right) \cos \left( \omega t - \frac{\pi}{2} \right) = \fbox{$(250mA) \cos \left( \omega t - \frac{\pi}{2} \right)$}$$
+where $\omega = 100 rad / s$
+We also express the current in the capacitor at $\omega = \omega_0$:
+$$I_C = (2.5mV \cdot F)(100s^{-1}) \cos \left( \omega t + \frac{\pi}{2} \right)$$
+$$= \fbox{$-(250mA) \cos \left( \omega t + \frac{\pi}{2} \right)$}$$
+where $\omega = 100 rad / s$.\\
+(d) We show the phasor diagram for the case where the inductive reactance is larger than the capacitive reactance.
 
+\paragraph{}
+59 - If we differentiate with respect to time we can find I as a function of time. For (b), C can be found using $\omega = 1 / \sqrt{LC}$. The energy stored in the magnetic field of the inductor is given by $U_m = \frac{1}{2}LI^2$ and the energy stored in the electric field of the capacitor is given by $U_e = \frac{1}{2}\frac{Q^2}{C}$.\\
+(a) We differentiate the charge with respect to time for obtaining the current:
+$$I(t) = \frac{dQ}{dt} = \frac{d}{dt}\left[ (15 \mu C) \cos \left( \omega t + \frac{\pi}{4} \right) \right] = -(15 \mu C)(1250s^{-1}) \sin \left( \omega t + \frac{\pi}{4} \right)$$
+$$-(18.75mA) \sin \left( \omega t + \frac{\pi}{4} \right) = \fbox{$-(19mA) \sin \left( \omega t + \frac{\pi}{4} \right)$}$$
+where $\omega = 1250 rad / s$\\
+(b) We have a relation for C, L and $\omega$, solving for C and evaluating at numerical values:
+$$\omega = \frac{1}{\sqrt{LC}} \Rightarrow C = \frac{1}{\omega^2 L} = \frac{1}{(1250s^{-1})(28mH)} = 22.86 \mu F = \fbox{$23 \mu F$}$$
+(c) For the magnetic energy at time t we have:
+$$U_m(t) = \frac{1}{2}LI^2 = \frac{1}{2}(28mH)(18.75mA)^2 \sin^2 \left( \omega t + \frac{\pi}{4} \right) = \fbox{$(4.9 \mu J) \sin^2 \left( \omega t + \frac{\pi}{4} \right)$}$$
+where $\omega = 1250 rad / s$.\\
+We now find the electrical energy stored in the capacitor $U_e = \frac{1}{2} \frac{Q^2}{C}$ as a function of time:
+$$U_e(t) = \frac{1}{2} \frac{(15 \mu F)^2}{22.86 \mu F} \cos^2 \left( \omega t + \frac{\pi}{4} \right)$$
+$$= (4.92 \mu J) \cos^2 \left( \omega t + \frac{\pi}{4} \right)$$
+where $\omega = 1250 rad / s$.\\
+The total energy sum stored in electric and magnetic field is the sum of $U_e(t)$ and $U_m(t)$:
+$$U = (4.92 \mu J) \sin^2 \left( \omega t + \frac{\pi}{4} \right) + (4.92 \mu J) \cos^2 \left( \omega t + \frac{\pi}{4} \right) = \fbox{$4.9 \mu J$}$$
+
+\paragraph{}
+60 - The capacitance of a dielectric field capacitor definition and the expression for the resonance frequency of an LC circuit can be used to derive an expression for the fractional change in the thicknes of the dielectric in terms of the resonance frequency and the frequency of the circuit when the dielectric is under copression. Afterwards, we can use this expression for $\Delta t / t$ to calculate the Young's modulus for the dielectric material.\\
+We begin by using th definition for the Young's modulus of the dielectric material:
+\begin{equation}\label{my}
+  Y = \frac{stress}{strain} = \frac{\Delta P}{\Delta t / t}
+\end{equation}
+We let t to be the initial thickness of the dielectric, expressing the initial capacitance of the capacitor:
+$$C_0 = \frac{\kappa \epsilon_0 A}{t}$$
+We express the capacitance of the capacitor when it is under compression:
+$$C_C = \frac{\kappa \epsilon_0 A}{t - \Delta t}$$
+Now we express the resonance frequency of the capacitor before the dielectric is compressed:
+$$\omega_0 = \frac{1}{\sqrt{C_0L}} = \frac{1}{\sqrt{\frac{\kappa \epsilon_0 AL}{t}}}$$
+And now when the dielectric is compressed:
+$$\omega_C = \frac{1}{\sqrt{C_CL}} = \frac{1}{\sqrt{\frac{\kappa \epsilon_0 AL}{t - \Delta t}}}$$
+Simplifying by expressing the ratio of $\omega_C$ and $\omega_0$:
+$$\frac{\omega_C}{\omega_0} = \frac{\sqrt{\frac{\kappa \epsilon_0 AL}{t}}}{\sqrt{\frac{\kappa \epsilon_0 AL}{t - \Delta t}}} = \sqrt{1 - \frac{\Delta t}{t}}$$
+We can expand the radical binomially to obtain:
+$$\frac{\omega_C}{\omega_0} = \left( 1 - \frac{\Delta t}{t} \right)^{1/2} \approx 1 - \frac{\Delta t}{2t}$$
+provided that $\Delta t << t$.\\
+Solving for $\Delta t / t$:
+$$\frac{\Delta t}{t} = 2 \left( 1 - \frac{\omega_c}{\omega_0} \right)$$
+Subsituting in equation \ref{my}:
+$$Y = \frac{\Delta P}{2 \left( 1 - \frac{\omega_c}{\omega_0} \right)}$$
+And finally using the numerical values we evaluate Y:
+$$Y = \frac{(800atm)(102.325kPa/atm)}{2 \left( 1 - \frac{116MHz}{120MHz} \right)} = \fbox{$1.22 \times 10^9 N / m^2$}$$
+
+\paragraph{}
+61 - The capacitor can be modeled as the equivalent of two capacitors connected in parallel. Let $C_1$ by the capcacitance of the dielectric-filled capacitor and $C_2$ be the air-filled capacitor. We will derive expressions for each capacitance and then add them together to obtain $C(x)$. We can then use the given resonance frequency when $x = w / 2$ and the given value for L to evaluate $C_0$. In part (b) we can use our result for $C(x)$ and the relationship between $f, L$ and $C(x)$ at resonance to express $f(x)$.\\
+(a) Let's express the equivalent capacitance of the two capacitors in parallel:
+\begin{equation}\label{cx}
+  C(x) = C_1 + C_2 = \frac{\kappa \epsilon_0 A_1}{d} + \frac{\epsilon_0 A_2}{d}
+\end{equation}
+We need to express $A_2$ in terms of the total area of a capacitor plate A, w, and the distance x:
+$$\frac{A_2}{A} = \frac{x}{w} \Rightarrow A_2 = A \frac{x}{w}$$
+We do express $A_1$ in terms of A and $A_2$:
+$$A_1 = A - A_2 = A \left( 1 - \frac{x}{w} \right)$$
+Substituting in equation \ref{cx} and simplifying:
+$$C(x) = \frac{\kappa \epsilon_0 A}{d}\left( 1 - \frac{x}{w} \right) + \frac{\epsilon_0 A x}{d w}$$
+$$= \frac{\epsilon_0 A}{d} \left[ \kappa \left( 1 - \frac{x}{w} \right) + \frac{x}{w} \right] = \kappa C_0 \left[ 1 - \frac{\kappa - 1}{kw} x \right]$$
+where $C_0 = \frac{\epsilon_0 A}{d}$
+We find $C(w / 2)$:
+$$C \left( \frac{w}{2} \right) = \kappa C_0 \left[ 1- \frac{(\kappa - 1)w}{2kw} \right] = \kappa C_0 \left[ 1 - \frac{\kappa - 1}{2\kappa} \right] = C_0 \frac{\kappa + 1}{2}$$
+Now for the resonance frequency of the circuit in terms of L and $C(x)$ we express:
+\begin{equation}\label{fx}
+  f(x) = \frac{1}{2 \pi \sqrt{LC(x)}}
+\end{equation}
+We do evaluate $f(w / 2)$:
+$$f \left( \frac{w}{2} \right) = \frac{1}{2 \pi \sqrt{LC_0 \frac{\kappa + 1}{2}}} = \frac{1}{2 \pi} \sqrt{\frac{2}{(\kappa + 1)LC_0}}$$
+Solving for $C_0$ we obtain:
+$$C_0 = \frac{1}{2 \pi^2 f^2 \left( \frac{w}{2} \right)L(\kappa + 1)}$$
+Now we substitute numerical values and evaluate $C_0$:
+$$C_0 = \frac{1}{2 \pi^2 (90MHz)^2 \left( \frac{20cm}{2} \right)(2.0mH)(4.8 + 1)} = \fbox{5.4fF}$$
+(b) Substitute for $C(x)$ in equation \ref{fx}:
+$$f(x) = \frac{1}{2 \pi \sqrt{L\kappa C_0 \left[ 1 - \frac{\kappa - 1}{\kappa w} x \right]}}$$
+And finally substitute numerical values and evaluate $f(x)$:
+$$f(x) = \frac{1}{2 \pi \sqrt{(2.0mH)(4.8)(5.39 \times 10^{-16}F) \left[ 1 - \frac{4.8 - 1}{4.8(0.20m)} x \right]}} = \fbox{$\frac{70MHz}{\sqrt{1-(4.0m^{-1})x}}$}$$
+\section{Driven RLC Circuits}
+
+\paragraph{}
+62 - In the diagram is shown the relationship between $\delta, X_L, X_C, R$. This reference triangle can be used to express the power factor for the given circuit. In (b) we can find the rms current from the rms potential difference and the impedance of the circuit. The rms current and the resistance of the resistor can be used to find the average power delivered by the source.\\
+(a) The power factor is defined as:
+$$\cos \delta = \frac{R}{Z} = \frac{R}{\sqrt{R^2 + (X_L - X_C)^2}}$$
+We have no inductance in the circuit, therefore $X_L = 0$ and
+$$\cos \delta = \frac{R}{\sqrt{R^2 + X_C^2}} = \frac{R}{\sqrt{R^2 + \frac{1}{\omega^2 C^2}}}$$
+Substituting numerical values to evaluate $\cos \delta$:
+$$\cos \delta = \frac{80\Omega}{\sqrt{(80\Omega)^2 + \frac{1}{(400s^{-1})^2(20 \mu F)^2}}} = \fbox{0.54}$$
+(b) For this exercise, express the rms current in the circuit:
+$$I_{rms} = \frac{\mathcal{E}_{rms}}{Z} = \frac{\frac{\mathcal{E}_{max}}{\sqrt{2}}}{\sqrt{R^2 + X_C}}$$
+$$\frac{\mathcal{E}_{max}}{\sqrt{2} \sqrt{R^2 + \frac{1}{\omega^2 C^2}}}$$
+Substituting numerical values and evaluate $I_{rms}$:
+$$I_{rms} = \frac{20V}{\sqrt{2}\sqrt{(80\Omega)^2 + \frac{1}{(400s^{-1})^2(20 \mu F)^2}}} = 95.3mA = \fbox{95mA}$$
+(c) The average power that the generator delivers is $P_{av} = I_{rms}^2R$, substituting numerical values and evaluating $P_{av}$:
+$$P_{av} = (95.3mA)^2(80\Omega) = \fbox{0.73W}$$
+
+\paragraph{}
+63 - $Z = \sqrt{R^2 + (X_L - X_C)^2}$ gives the immpedance of an ac circuit. If we make $X_L = X_C = 0$ and then $R = 0$, we can evaluate the impedance expression for $P_{av}$.\\
+(a) For $X = 0, Z = R$:
+$$P_{av} = \frac{R\mathcal{E}_{rms}^2}{Z^2} = \frac{R\mathcal{E}_{rms}^2}{R^2} = \fbox{$\frac{R\mathcal{E}_{rms}^2}{R}$}$$
+(b) and (c). If $R = 0$, then:
+$$P_{av} = \frac{R\mathcal{E}_{rms}^2}{Z^2} = \frac{(0)\mathcal{E}_{rms}^2}{(X_L - X_C)^2} = \fbox{0}$$
+Remarks: in an ideal inductor or capacitor there is no energy dissipation.
+
+\paragraph{}
+64 - The resonant frequency of the circuit can be found using $\omega_0 = 1 / \sqrt{LC}$, the rms current at resonance can be found using $I_{rms} = \mathcal{E}_{rms} / R$. We can find the reactances at $\omega = 8000 rad / s$, by using the definitions of $X_C, X_L$. The definitions of  $Z, I_{rms}$ to find the impedance and rms current at $\omega = 8000 rad / s$, and the definition of the phase angle to find $\delta$.\\
+(a) We begin by expressing the resonant frequency $\omega_0$ in terms of L and C and substitute numerical values, evaluating:
+$$\omega_0 = \frac{1}{\sqrt{LC}} = \frac{1}{\sqrt{(10mH)(2.0 \mu F)}} = \fbox{$7.1 \times 10^3 rad / s$}$$
+(b) We need to find a relationship between the rms current at resonance and $\mathcal{E}_{rms}$ and the impedance of the circuit at resonance as well:
+$$I_{rms} = \frac{\mathcal{E}_{rms}}{R} = \frac{\mathcal{E}_{max}}{\sqrt{2}R} = \frac{100V}{\sqrt{2}()5.0\Omega} = \fbox{14A}$$
+(c) We do express and evaluate $X_C$ and $X_L$ at $\omega = 8000 rad / s$:
+$$X_C = \frac{1}{\omega C} = \frac{1}{(8000s^{-1})(2.0 \mu F)} = 62.50 \Omega = \fbox{$63 \Omega$}$$
+and
+$$X_L = \omega L = (8000 s^{-1})(10 mH) = \fbox{$80\Omega$}$$
+(d) The impedance needs to be expressed in terms of reactances, and substitute results from (c) and evaluate Z:
+$$Z^2 = \sqrt{R^2 + (X_L - X_C)^2} = \sqrt{(5.0 \Omega)^2 + (80 \Omega - 62.5 \Omega)^2} = 18.2 \Omega = \fbox{$18 \Omega$}$$
+(e) We need to relate the rms current at $\omega = 8000 rad / s$ to $\mathcal{E}_{rms}$ and the impedance of the circuit at this same frequency:
+$$I_{rms} = \frac{\mathcal{E}_{rms}}{Z} = \frac{\mathcal{E}_{max}}{\sqrt{2}Z} = \frac{100V}{\sqrt{2}(18.2 \Omega)} = \fbox{3.9 A}$$
+(f) We find $\delta$ as follows:
+$$\delta = \tan^{-1} \left( \frac{X_L - X_C}{R} \right) = \tan^{-1} \left( \frac{80 \Omega - 62.5 \Omega}{5.0 \Omega} \right) = \fbox{$74^{\circ}$}$$
 
 
 
